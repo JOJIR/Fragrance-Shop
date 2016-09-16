@@ -12,14 +12,5 @@ public class DefaultController
 		return "../../index";
 	}
 	
-	@RequestMapping("/AboutUs")
-	public String aboutUs()
-	{
-		return "AboutUs";
-	}
-	@RequestMapping("/ContactUs")
-	public String contactUs()
-	{
-		return "ContactUs";
-	}
+	
 }
