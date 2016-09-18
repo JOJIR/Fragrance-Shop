@@ -5,15 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Insert title here</title>
+<title>PERFUME POWER</title>
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/font-awesome-4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-
+		
             <h1 align='center'><font color='blue' ><b><i>PERFUME POWER</b></i></font></h1>
-        </div>
+        
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -48,6 +48,47 @@
                 <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
  
                 </ul>
+     
+     
+     <div class="col-md-6 col-xs-12">
+							<ul class="list-inline pull-right">
+								<li><span><a data-toggle="modal" href='#login'>Log
+											in</a><small><font color='white'>or</font></small><a data-toggle="modal" href='#signup'>Create
+											an account</a></span></li>
+								<li class="dropdown searchBox"><a href="#"
+									class="dropdown-toggle" data-toggle="dropdown"><i
+										class="fa fa-search hicon"></i></a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><span class="input-group"> <input type="text"
+												class="form-control" placeholder="Search..."
+												aria-describedby="basic-addon2"> <span
+												class="input-group-addon" id="basic-addon2">Search</span>
+										</span></li>
+									</ul></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown"><i class="fa fa-shopping-cart hicon"></i>$0</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										
+										
+										
+										<li>
+											<div class="btn-group" role="group" aria-label="...">
+												<button type="button" class="btn btn-default">Shopping
+													Cart</button>
+												<button type="button" class="btn btn-default">Checkout</button>
+											</div>
+										</li>
+									</ul></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+     
+     
+     
      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

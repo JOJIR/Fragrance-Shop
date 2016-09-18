@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.powerperfume.dao.UserDAO;
 import com.powerperfume.model.User;
 import com.powerperfume.model.UserDetails;
 
@@ -47,14 +48,17 @@ public class UserDAOImpl implements UserDAO {
 
 
 	@Transactional
-	public void delete(String id) {
+	public void delete(Integer id) {
 		User user = new User();
+		UserDetails userDetails = new UserDetails();
 		user.setId(id);
+		userDetails.setId(id);
 		sessionFactory.getCurrentSession().delete(user);
+		sessionFactory.getCurrentSession().delete(userDetails);
 	}
 
 	@Transactional
-	public User get(String id) {
+	public User get(Integer id) {
 		String hql = "from User where id=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
@@ -69,8 +73,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Transactional
-	public boolean isValidUser(String id, String password, boolean isAdmin) {
-		String hql = "from User where id= '" + id + "' and " + " password ='" + password+"'";
+	public boolean isValidUser(String email, String password, boolean isAdmin) {
+		String hql = "from User where id= '" + email + "' and " + " password ='" + password+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -81,6 +85,25 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return false;
+	}
+	
+	
+	@Transactional
+	public boolean validateRegistration(UserDetails userDetails)
+	{
+		if(userDetails.getEmail() == null)
+			return false;
+		String hql = "from User where email = '" + userDetails.getEmail() + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		
+		@SuppressWarnings("unchecked")
+		List<User> list =(List<User>)query.list();
+		
+		if(list != null && !list.isEmpty())
+			return false;
+		
+		return true;
 	}
 
 

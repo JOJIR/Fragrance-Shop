@@ -20,8 +20,21 @@
     </div>
 
     <div class="item">
-      <img class="third -slide" src="resources/image/perfume3.jpeg" alt="Third slide" width="100%" height="100%">
+      <img class="third -slide" src="resources/image/perfume3.jpg" alt="Third slide" width="100%" height="100%">
     </div>
+    
+    <div class="item">
+      <img class="fourth -slide" src="resources/image/perfume4.jpg" alt="Third slide" width="100%" height="100%">
+    </div>
+    
+    <div class="item">
+      <img class="fifth -slide" src="resources/image/perfume5.jpg" alt="Third slide" width="100%" height="100%">
+    </div>
+    
+    <div class="item">
+      <img class="sixth -slide" src="resources/image/perfume6.jpg" alt="Third slide" width="100%" height="100%">
+    </div>
+    
 
 
 
@@ -37,6 +50,10 @@
 </div>
 
 
+<script type="text/javascript">
+		var elem = document.getElementById("LinkHome");
+		elem.className += " active";
+	</script>
 
 
 <%@include file="WEB-INF/view/Footer.jsp"  %>

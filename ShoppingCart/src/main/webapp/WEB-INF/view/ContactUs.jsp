@@ -1,4 +1,25 @@
 <%@include file="Header.jsp"  %>
+
+<!-- LIGHT SECTION -->
+	<section class="lightSection clearfix pageHeader">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="page-title">
+						<h2><font color='violet'>Contact Us</font></h2>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<ol class="breadcrumb pull-right">
+						<li><a href="Home">Home</a></li>
+						<li class="active">Contact Us</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 <div class="jumbotron jumbotron-sm">
     <div class="container">
         <div class="row">
@@ -8,53 +29,7 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm">
-                <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">
-                                Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject</label>
-                            <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="service">General Customer Service</option>
-                                <option value="suggestions">Suggestions</option>
-                                <option value="product">Product Support</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                            Send Message</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
+
         <div class="col-md-4">
             <form>
             <legend><span class="glyphicon glyphicon-globe"></span><font color='violet'> Our office</font></legend>
@@ -71,7 +46,10 @@
                 <a href="mailto:#">first.last@example.com</a>
             </address>
             </form>
-        </div>
-    </div>
-</div>
+            </div>
+
+<script type="text/javascript">
+		var elem = document.getElementById("LinkContactUs");
+		elem.className += " active";
+	</script>
 <%@include file="Footer.jsp"  %>
