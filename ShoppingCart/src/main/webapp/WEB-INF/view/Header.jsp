@@ -33,7 +33,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index">HOME</a></li>
+        <li><a href="Home">HOME</a></li>
             <li><a href="Login">LOGIN</a></li>
             <li><a href="Register">REGISTER</a></li>
             <li><a href="AboutUs">ABOUT US</a></li>

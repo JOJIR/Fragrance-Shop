@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="page-title">
-						<h2>Admin home</h2>
+						<h2><font color='white'>Admin home</font></h2>
 					</div>
 				</div>
 				<div class="col-sm-6">

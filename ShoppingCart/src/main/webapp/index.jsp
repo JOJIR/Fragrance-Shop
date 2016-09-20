@@ -12,27 +12,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img class="first-slide" src="resources/image/perfume1.jpg" alt="First slide" width="100%" height="100%">
+      <img class="first-slide" src="resources/image/perfume1.jpg" alt="First slide" width="100%" height="360">
     </div>
 
     <div class="item">
-      <img class="second-slide" src="resources/image/perfume2.jpg" alt="Second slide" width="100%" height="100%">
+      <img class="second-slide" src="resources/image/perfume2.jpg" alt="Second slide" width="100%" height="360">
     </div>
 
     <div class="item">
-      <img class="third -slide" src="resources/image/perfume3.jpg" alt="Third slide" width="100%" height="100%">
+      <img class="third -slide" src="resources/image/perfume3.jpg" alt="Third slide" width="100%" height="360">
     </div>
     
     <div class="item">
-      <img class="fourth -slide" src="resources/image/perfume4.jpg" alt="Third slide" width="100%" height="100%">
+      <img class="fourth -slide" src="resources/image/perfume4.jpg" alt="Third slide" width="100%" height="360">
     </div>
     
     <div class="item">
-      <img class="fifth -slide" src="resources/image/perfume5.jpg" alt="Third slide" width="100%" height="100%">
+      <img class="fifth -slide" src="resources/image/perfume5.jpg" alt="Third slide" width="100%" height="360">
     </div>
     
     <div class="item">
-      <img class="sixth -slide" src="resources/image/perfume6.jpg" alt="Third slide" width="100%" height="100%">
+      <img class="sixth -slide" src="resources/image/perfume6.jpg" alt="Third slide" width="100%" height="360">
     </div>
     
 
