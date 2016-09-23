@@ -12,18 +12,18 @@ public interface UserDAO {
 
 	public List<User> list();
 
-	public User get(Integer id);
+	public User get(int sortOrder);
 
-	public void saveOrUpdate(User user);
+	public boolean save(User user);
 	
-	public void saveOrUpdate(UserDetails userDetails);
-
-	public void delete(Integer id);
+	public boolean update(User user);
 	
-	public boolean isValidUser(String email, String password, boolean isAdmin);
+	public boolean delete(User email);
+	
+	public boolean isValidUser(User user);
 	
 	public boolean validateRegistration(UserDetails userDetails);
-
-
+	
+	public void registerUser(UserDetails userDetails); 
 }
 
