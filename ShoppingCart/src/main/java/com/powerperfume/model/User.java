@@ -13,8 +13,8 @@ public class User{
 	public String email;
 	public String password;
 	
-	@Column(name = "is admin")
-	private boolean admin;
+	@Column(name = "is_admin")
+	private boolean isAdmin;
 	
 	@Column(name = "first_name")
 	private String firstName;

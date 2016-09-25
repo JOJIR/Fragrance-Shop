@@ -9,13 +9,15 @@ import com.powerperfume.model.Category;
 public interface CategoryDAO {
 
 
-	public List<Category> list();
+	public List<Category> list(int sortOrder);
 
 	public Category get(String id);
+	
+	public boolean update(Category category);
 
-	public void saveOrUpdate(Category category);
+	public boolean save(Category category);
 
-	public void delete(String id);
+	public boolean delete(String id);
 
 
 }

@@ -1,14 +1,16 @@
 package com.powerperfume.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "product")
 @Component
 public class Product {
 
@@ -16,13 +18,22 @@ public class Product {
 	private String  id;
 	private String name;
 	private String description;
-	private double price;
+	private BigDecimal price;
+	private int quantity;
+	
 	
 	@Column(name = "category_id")
 	private String categoryID;
 	
 	@Column(name = "supplier_id")
 	private String supplierID;
+	
+	
+	@Transient
+	private MultipartFile image;
+	
+	
+	
 	public String getId() {
 		return id;
 	}
@@ -41,15 +52,26 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+	
+	public int getQuantity(){
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity){
+		this.quantity = quantity;
+	}
+	
 	public String getCategoryID() {
 		return categoryID;
 	}
+	
+	
 	public void setCategoryID(String categoryID) {
 		this.categoryID = categoryID;
 	}
@@ -60,7 +82,12 @@ public class Product {
 		this.supplierID = supplierID;
 	}
 	
-	
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 	
 
 }

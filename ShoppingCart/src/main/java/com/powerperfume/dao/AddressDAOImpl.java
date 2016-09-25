@@ -8,13 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.powerperfume.dao.AddressDAO;
 import com.powerperfume.model.Address;
 
-@Repository
+@Repository("addressDAO")
 public class AddressDAOImpl implements AddressDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	public AddressDAOImpl(SessionFactory sessionFactory)
+	{
+		this.sessionFactory =  sessionFactory;
+	}
 	
 	@Transactional
 	public List<Address> list(int sortOrder)
@@ -47,8 +53,7 @@ public class AddressDAOImpl implements AddressDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 				@SuppressWarnings("unchecked")
-				List<Address> list = (List<Address>)
-		query.list();
+				List<Address> list = (List<Address>) query.list();
 				
 				
 				return list;
@@ -64,8 +69,7 @@ public class AddressDAOImpl implements AddressDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 				@SuppressWarnings("unchecked")
-				List<Address> list = (List<Address>)
-		query.list();
+				List<Address> list = (List<Address>) query.list();
 				
 				
 				if (list != null && !list.isEmpty())
@@ -89,8 +93,7 @@ public class AddressDAOImpl implements AddressDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
-		List<Address> list = (List<Address>)
-query.list();
+		List<Address> list = (List<Address>) query.list();
 		
 		return list;
 	}

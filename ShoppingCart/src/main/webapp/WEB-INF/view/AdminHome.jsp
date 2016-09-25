@@ -60,7 +60,8 @@
 							<div class="btn-group-vertical">
 								<button type="button" class="btn btn-primary">Add
 									Supplier</button>
-								<button type="button" class="btn btn-primary">View and
+								<button type="button" class="btn btn-primary"
+									onclick="window.location.href='AdminSupplierList'">View and
 									Update Suppliers</button>
 							</div>
 						</div>
