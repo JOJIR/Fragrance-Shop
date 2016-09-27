@@ -45,8 +45,8 @@ public class AdminController {
 		return "AdminHome";
 	}
 	
-	@RequestMapping("/Addproduct")
-	public ModelAndView addproduct(@ModelAttribute("product") Product product)
+	@RequestMapping("/AddProduct")
+	public ModelAndView addProduct(@ModelAttribute("product") Product product)
 	{
 		ModelAndView modelView = new ModelAndView("AddProduct");
 			List<Category> clist = categoryDAO.list(0);
@@ -71,7 +71,7 @@ public class AdminController {
 	}
 	
 	
-	//EditProductAttempt
+	// EditProductAttempt
 	
 	@RequestMapping("/AddProductAttempt")
 	public String addProductAttempt(@ModelAttribute("product") Product product, HttpServletRequest request , Model model)
@@ -174,7 +174,7 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping("/DeleteProductattempt")
+	@RequestMapping("/DeleteProductAttempt")
 	public String deleteProductAttempt(@RequestParam("id") String id, Model model)
 	{
 		productDAO.delete(id);

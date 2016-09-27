@@ -52,8 +52,8 @@
      
      <div class="col-md-6 col-xs-12">
 							<ul class="list-inline pull-right">
-								<li><span><a data-toggle="modal" href='#login'>Log
-											in</a><small><font color='white'>or</font></small><a data-toggle="modal" href='#signup'>Create
+								<li><span><a data-toggle="modal" href='Login'>Log
+											in</a><small><font color='white'> or </font></small><a data-toggle="modal" href='Register'>Create
 											an account</a></span></li>
 								<li class="dropdown searchBox"><a href="#"
 									class="dropdown-toggle" data-toggle="dropdown"><i
@@ -67,21 +67,13 @@
 									</ul></li>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown"><i class="fa fa-shopping-cart hicon"></i>$0</a>
-									<ul class="dropdown-menu dropdown-menu-right">
-										
-										
-										
-										<li>
-											<div class="btn-group" role="group" aria-label="...">
-												<button type="button" class="btn btn-default">Shopping
-													Cart</button>
-												<button type="button" class="btn btn-default">Checkout</button>
-											</div>
-										</li>
-									</ul></li>
+									
+								
+									
+
+
 							</ul>
-						</div>
-					</div>
+						</div></div>
 				</div>
 			</div>
 		</div>

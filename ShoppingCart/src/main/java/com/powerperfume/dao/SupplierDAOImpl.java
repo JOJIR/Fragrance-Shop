@@ -47,7 +47,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 		
 		
-		String hql = "from order by " + sort;
+		String hql = "from Supplier order by " + sort;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Supplier> list = (List<Supplier>) query.list();

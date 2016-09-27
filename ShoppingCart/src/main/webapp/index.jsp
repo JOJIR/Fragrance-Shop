@@ -49,11 +49,73 @@
   </a>
 </div>
 
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 
+<div class="box featured">
+<div class="box-heading">Featured Products</div>
+<div class="box-content">
+<div class="box-product">
+<ul class="row">
+<li class="first-in-line span3">
 <script type="text/javascript">
+				$(document).ready(function(){
+					$("a.colorbox1").colorbox({
+					rel: 'colorbox',
+					inline:true,
+					html: true,
+					width:'58%',
+					maxWidth:'780px',
+					height:'70%',
+					opacity:0.6,
+					open:false,
+					returnFocus:false,
+					fixed: false,
+					title: false,
+					href:'.quick-view1',
+					current:'Product {current} of {total}'
+					});
+					});
+				</script>
+
+
+<div class="image1" onclick="location.href='SingleProduct';" >
+							<a href=""><img id="" src="" alt="" /></a>
+						</div>
+						<div style="display: none;">
+							<div class="quick-view1 preview">
+								<div class="wrapper marg row-fluid">
+									<div class="left span4">
+										<div class="image2">
+											<a
+												href=""><img
+												src=""
+												alt="" /></a>
+										</div>
+									</div>
+									
+										<div class="cart-button">
+											<div class="cart">
+												<a title="Add to cart" data-id=""
+													class="button addToCart-1 "> <span>Add to cart</span>
+												</a>
+											</div>
+
+											<div class="wishlist">
+												<a class="tooltip-1" title="Add to Wish List"
+													onclick="addToWishList('43');"> <i class="icon-star"></i>
+													<span>Add to Wish List</span>
+												</a>
+											</div>
+
+
+											<script type="text/javascript">
 		var elem = document.getElementById("LinkHome");
 		elem.className += " active";
 	</script>
 
 
-<%@include file="WEB-INF/view/Footer.jsp"  %>
+											<%@include file="WEB-INF/view/Footer.jsp"%>

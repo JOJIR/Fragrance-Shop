@@ -24,13 +24,13 @@
 				<div class="col-md-4 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h3>Product Management</h3>
+							<h3>Product </h3>
 						</div>
 						<div id="addProduct" class="panel-body">
 							<div class="btn-group-vertical">
 								<button type="button" class="btn btn-primary" onclick="window.location.href='AddProduct'">Add
 									Product</button>
-								<button type="button" class="btn btn-primary">View and
+								<button type="button" class="btn btn-primary" onclick="window.location.href='AdminProductList'" >
 									Update Products</button>
 							</div>
 						</div>
@@ -39,13 +39,13 @@
 				<div class="col-md-4 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h3>User Management</h3>
+							<h3>User </h3>
 						</div>
 						<div id="addUser" class="panel-body">
 							<div class="btn-group-vertical">
 								<button type="button" class="btn btn-primary">Add
 									User</button>
-								<button type="button" class="btn btn-primary">View and
+								<button type="button" class="btn btn-primary">
 									Update Users</button>
 							</div>
 						</div>
@@ -54,14 +54,14 @@
 				<div class="col-md-4 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h3>Supplier Management</h3>
+							<h3>Supplier </h3>
 						</div>
 						<div id="addSupplier" class="panel-body">
 							<div class="btn-group-vertical">
-								<button type="button" class="btn btn-primary">Add
+								<button type="button" class="btn btn-primary" onclick="window.location.href='AddSupplier'" >Add
 									Supplier</button>
 								<button type="button" class="btn btn-primary"
-									onclick="window.location.href='AdminSupplierList'">View and
+									onclick="window.location.href='AdminSupplierList'">
 									Update Suppliers</button>
 							</div>
 						</div>
