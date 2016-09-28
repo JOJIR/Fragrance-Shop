@@ -1,27 +1,27 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
-	<%@ include file="Header.jsp"%>
-	<!-- LIGHT SECTION -->
-<section class="lightSection clearfix pageHeader">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="page-title">
-					<h2>Product List View</h2>
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<ol class="breadcrumb pull-right">
-					<li><a href="Home">Home</a></li>
-					<li><a href="AdminHome">Admin Home</a></li>
-					<li class="active">Admin Product List</li>
-				</ol>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- MAIN CONTENT SECTION -->
+<%@ include file="Header.jsp"%>
+  <!-- LIGHT SECTION -->
+      <section class="lightSection clearfix pageHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="page-title">
+                <h2>Product Grid View</h2>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <ol class="breadcrumb pull-right">
+                <li>
+                  <a href="Home">Home</a>
+                </li>
+               
+                <li class="active">Product Grid</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+           <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix productsContent">
         <div class="container">
           <div class="row">
@@ -65,59 +65,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="row productListSingle">
-
-					<c:forEach items="${productList}" var="product">
-						<div class="col-xs-12">
-							<div class="media">
-								<div class="media-left">
-									<img class="media-object"
-										src="resources/images/products/${product.id}.jpg" alt="Image">
-									<span class="maskingImage"><a data-toggle="modal"
-										href=".quick-view" class="btn viewBtn">Quick View</a></span>
-								</div>
-								<div class="media-body">
-									<div class="col-xs-10 content-wrap">
-										<h4 class="media-heading">
-											<a href="SingleProduct">${product.name}</a>
-										</h4>
-										<p>${product.description}</p>
-										<h3>$${product.price}</h3>
-										<ul class="list-inline">
-											<li><h4>Category ID:${product.categoryID}</h4></li>
-											<li><h4>Supplier ID:${product.supplierID}</h4></li>
-										</ul>
-										<div class="btn-group" role="group">
-										<button type="button" class="btn btn-default"
-												onclick="location.href='/ShoppingCart/EditProduct?id=${product.id}';">
-												<i class="fa fa-pencil" aria-hidden="true"></i>
-											</button>	
-											<button type="button" class="btn btn-default"
-												onclick="location.href='/ShoppingCart/DeleteProductAttempt?id=${product.id}';">
-												<i class="fa fa-times" aria-hidden="true"></i>
-											</button>
-										</div>
-									</div>
-									<div class="col-xs-2">
-										<i class="fa fa-times">${product.quantity}</i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-
-				</div>
 			</div>
 		</div>
-      </section>
-
-	<script>
-		var e = document.querySelector("#sortOrder");
-		e.value = ${sortOrder};
-		e.addEventListener("change", function() {
-			window.location.href = "/ShoppingCart/AdminProductList?sort="
-					+ this.value;
-		});
-	</script>
-	<%@ include file="Footer.jsp"%>
-
+	
+</section>
+<%@ include file="Footer.jsp"%>
+      
