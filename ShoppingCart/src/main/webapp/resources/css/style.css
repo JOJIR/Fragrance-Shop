@@ -1,3 +1,7 @@
+.indexproducts
+{
+	max-width:250px;
+}
 element.style {
 }
 .fullscreenbanner .tp-dottedoverlay.twoxtwo {
@@ -253,7 +257,6 @@ border: none;
 img {
 width: auto\9;
 height: auto;
-max-width: 250px;
 vertical-align: middle;
 border: 0;
 -ms-interpolation-mode: bicubic;
@@ -891,4 +894,15 @@ font-size: 10px;
 }
 html {
 font-family: sans-serif;
+}
+.banner img {
+width: 100%;
+height: auto;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+a img {
+border: none;
 }

@@ -12,35 +12,35 @@
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox"
-	style="width: 100%; height: 500px !important;">
+		style="width: 100%; height: 500px !important;">
 		<div class="item active">
-			<img class="first-slide" src="resources/image/home/carousel/perfume1.jpg"
-				alt="First slide" >
+			<img class="first-slide"
+				src="resources/image/home/carousel/perfume1.jpg" alt="First slide">
 		</div>
 
 		<div class="item">
-			<img class="second-slide" src="resources/image/home/carousel/perfume2.jpg"
-				alt="Second slide" >
+			<img class="second-slide"
+				src="resources/image/home/carousel/perfume2.jpg" alt="Second slide">
 		</div>
 
 		<div class="item">
-			<img class="third -slide" src="resources/image/home/carousel/perfume3.jpg"
-				alt="Third slide" >
+			<img class="third -slide"
+				src="resources/image/home/carousel/perfume3.jpg" alt="Third slide">
 		</div>
 
 		<div class="item">
-			<img class="fourth -slide" src="resources/image/home/carousel/perfume4.jpg"
-				alt="Fourth slide" >
+			<img class="fourth -slide"
+				src="resources/image/home/carousel/perfume4.jpg" alt="Fourth slide">
 		</div>
 
 		<div class="item">
-			<img class="fifth -slide" src="resources/image/home/carousel/perfume5.jpg"
-				alt="Fifth slide" >
+			<img class="fifth -slide"
+				src="resources/image/home/carousel/perfume5.jpg" alt="Fifth slide">
 		</div>
 
 		<div class="item">
-			<img class="sixth -slide" src="resources/image/home/carousel/perfume6.jpg"
-				alt="Sixth slide" >
+			<img class="sixth -slide"
+				src="resources/image/home/carousel/perfume6.jpg" alt="Sixth slide">
 		</div>
 
 
@@ -57,90 +57,93 @@
 		</a>
 	</div>
 
-	<br> 
-	<br> 
-	<br> 
-	<br> 
-	<br>
+	<br> <br> <br> <br> <br>
 
 	<div class="box featured">
 		<div class="box-heading">Featured Products</div>
 		<div class="box-content">
 			<div class="box-product">
-			<ul class="row">
-	<li class="first-in-line span">
+				<ul class="row">
+					<li class="first-in-line span">
 
-	<section class="mainContent">
-	<div class="container">
-		<div class="row featuredCollection">
-			<div class="col-xs-12">
-				
-			</div>
-			<div class="col-sm-4 col-xs-12">
-				<div class="image"
-					onclick="location.href='SingleProduct';">
-					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/FG-01.jpg"
-							alt="featureproducts-image">
-						<div class="masking">
-							<a href="ProductGrid" class="btn viewBtn">View
-								Products</a>
+						<section class="mainContent">
+							<div class="container">
+								<div class="row featuredCollection">
+									<div class="col-xs-12"></div>
+									<div class="col-sm-4 col-xs-12">
+										<div class="image" onclick="location.href='SingleProduct';">
+											<div class="imageWrapper">
+												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-01.jpg"
+													alt="featureproducts-image">
+												<div class="masking">
+													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-12">
+										<div class="image" onclick="location.href='SingleProduct';">
+											<div class="imageWrapper">
+												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-02.jpg"
+													alt="featureproducts-image">
+												<div class="masking">
+													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-12">
+										<div class="image" onclick="location.href='SingleProduct';">
+											<div class="imageWrapper">
+												<img class="indexproducts" src="resources/image/home/featuredproducts/PF-01.jpg"
+													alt="featureproducts-image">
+												<div class="masking">
+													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div id="banner0" class="banner row">
+							<div class="col-sm-4 col-xs-12">
+								<a href=""><img src="resources/image/footer/order.png"
+									alt="" title="" />
+								<span class="s-desc">
+										<h1>order</h1>
+										<h2>online</h2>
+										<h3>Hours: 8AM -11PM</h3>
+									</span></a>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+								<a href=""><img src="resources/image/footer/shipping.png"
+									alt="" title="" />
+								<span class="s-desc">
+										<h1>Free</h1>
+										<h2>Shipping</h2>
+										<h3>on orders over $99</h3>
+									</span></a>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+								<a href=""><img src="resources/image/footer/gift.png" alt=""
+									title="" />
+								<span class="s-desc">
+										<h1>Special</h1>
+										<h2>gift cards</h2>
+										<h3>Give the perfect gift</h3>
+									</span></a>
+							</div>
+							<div class="clear"></div>
 						</div>
-					</div>
-					
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-12">
-				<div class="image"
-					onclick="location.href='SingleProduct';">
-					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/FG-02.jpg"
-							alt="featureproducts-image">
-						<div class="masking">
-							<a href="ProductGrid" class="btn viewBtn">View
-								Products</a>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-12">
-				<div class="image"
-					onclick="location.href='SingleProduct';">
-					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/PF-01.jpg"
-							alt="featureproducts-image">
-						<div class="masking">
-							<a href="ProductGrid" class="btn viewBtn">View
-								Products</a>
-						</div>
-					</div>
-					
-				</div>
+						<h1 style="display: none;">PERFUME POWER</h1>
 			</div>
 		</div>
 	</div>
-</section>
-      <div id="banner0" class="banner row">
-      <div class="col-sm-4 col-xs-12">
-<a href=""><img src="resources/image/footer/order.png"s-desc"><h1>order</h1>
-<h2>online</h2>
-<h3>Hours: 8AM -11PM </h3></div></a></div>
- <div class="col-sm-4 col-xs-12">
-<a href=""><img src="resources/image/footer/shipping.png" alt="" title=""/><div class="s-desc"><h1>Free</h1>
-<h2>Shipping</h2>
-<h3>on orders over $99</h3></div></a></div>
- <div class="col-sm-4 col-xs-12">
-<a href=""><img src="resources/image/footer/gift.png" alt="" title=""/><div class="s-desc"><h1>Special</h1>
-<h2>gift cards</h2>
-<h3>Give the perfect gift</h3></div></a></div>
-<div class="clear"></div>
-</div>
-<h1 style="display: none;">PERFUME POWER</h1>
-</div>
-</div>
-</div>
-<div class="clear"></div>
+	<div class="clear"></div>
 </div>
 </div>
 </div>

@@ -72,7 +72,7 @@
 						<div class="col-xs-12">
 							<div class="media">
 								<div class="media-left">
-									<img class="media-object"
+									<img class="media-object indexproducts"
 										src="resources/image/products/${product.id}.jpg" alt="Image">
 									<span class="maskingImage"><a data-toggle="modal"
 										href=".quick-view" class="btn viewBtn">Quick View</a></span>
