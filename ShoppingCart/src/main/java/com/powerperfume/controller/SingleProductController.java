@@ -4,12 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ProductGridController {
-	
-	@RequestMapping("/ProductGrid")
-	public String productGrid()
+public class SingleProductController {
+	@RequestMapping("/SingleProduct")
+	public String singleProduct()
 	{
-		return "ProductGrid";
+		return "SingleProduct";
 	}
 
 }

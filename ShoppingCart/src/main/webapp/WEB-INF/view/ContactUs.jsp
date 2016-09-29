@@ -43,7 +43,7 @@
             </address>
             <address>
                 <strong><font color='white'>Full Name</font></strong><br>
-                <a href="mailto:#">first.last@example.com</a>
+                <a href="mailto:#">powerperfume@outlook.com</a>
             </address>
             </form>
             </div>

@@ -78,7 +78,7 @@ public class AdminController
 	public String addProductAttempt(@ModelAttribute("product") Product product, HttpServletRequest request, Model model)
 	{
 		ServletContext context = request.getServletContext();
-		String path = context.getRealPath("./resources/images/products/" + product.getId() + ".jpg");
+		String path = context.getRealPath("./resources/image/products/" + product.getId() + ".jpg");
 
 
 		System.out.println("Path = " + path);
@@ -140,7 +140,7 @@ public class AdminController
 	public String editProductAttempt(@ModelAttribute("product") Product product, HttpServletRequest request, Model model)
 	{
 		ServletContext context = request.getServletContext();
-		String path = context.getRealPath("./resources/images/products/" + product.getId() + ".jpg");
+		String path = context.getRealPath("./resources/image/products/" + product.getId() + ".jpg");
 
 
 		System.out.println("Path = " + path);
