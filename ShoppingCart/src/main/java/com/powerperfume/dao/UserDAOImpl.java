@@ -57,7 +57,7 @@ public class UserDAOImpl implements UserDAO {
 			sort = "email";
 			break;
 		case 4:
-			sort = "is_admin";
+			sort = "role";
 			break;
 		default:
 			sort = "first_name";
@@ -144,18 +144,18 @@ public class UserDAOImpl implements UserDAO {
 
 	
 	@Transactional
-	public boolean isValidUser(User user) {
-		String hql = "from User where email = '" + user.getEmail() + "' and password = '" + user.getPassword() + "' and is_admin = " + user.isAdmin();
+	public User getValidUser(User user) {
+		String hql = "from User where email = '" + user.getEmail() + "' and password = '" + user.getPassword() + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<User> list = (List<User>) query.list();
 		
 		if(list != null && !list.isEmpty())
 		{
-			return true;
+			return list.get(0);
 		}
 		
-		return false;
+		return null;
 	}
 
 	
@@ -180,6 +180,7 @@ public class UserDAOImpl implements UserDAO {
 	@Transactional
 	public void registerUser(UserDetails userDetails) {
 		
+		userDetails.getUser().setRole("ROLE_USER");
 		save(userDetails.getUser());
 		String email = userDetails.getUser().getEmail();
 		userDetails.getShippingAddress().setEmail(email);

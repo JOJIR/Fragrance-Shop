@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 public class User{
 	
 	@Id
-	public String email;
-	public String password;
+	private String email;
+	private String password;
+	private String role;
 	
-	@Column(name = "is_admin")
-	private boolean isAdmin;
 	
 	@Column(name = "first_name")
 	private String firstName;
@@ -41,14 +40,7 @@ public class User{
 	{
 		this.password = password;
 	}
-	public boolean isAdmin()
-	{
-		return isAdmin;
-	}
-	public void setAdmin(boolean isAdmin)
-	{
-		this.isAdmin = isAdmin;
-	}
+	
 	public String getFirstName()
 	{
 		return firstName;
@@ -73,5 +65,14 @@ public class User{
 	{
 		this.contactNo = contactNo;
 	}
+	public String getRole()
+	{
+		return role;
+	}
+	public void setRole(String role)
+	{
+		this.role = role;
+	}
+
 
 }

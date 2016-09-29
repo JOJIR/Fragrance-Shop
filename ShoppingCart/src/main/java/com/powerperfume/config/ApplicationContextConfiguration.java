@@ -72,12 +72,7 @@ public class ApplicationContextConfiguration {
 			return transactionManager;
 		}
 	    
-	   /*@Autowired
-	    @Bean(name = "categoryDAO")
-	    public CategoryDAO getCategoryDao(SessionFactory sessionFactory) {
-	    	return new CategoryDAOImpl(sessionFactory);
-	    }*/
-
+	  
 	
 
 }

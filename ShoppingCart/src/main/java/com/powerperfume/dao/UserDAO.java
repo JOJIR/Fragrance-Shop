@@ -20,7 +20,7 @@ public interface UserDAO {
 	
 	public boolean delete(String email);
 	
-	public boolean isValidUser(User user);
+	public User getValidUser(User user);
 	
 	public boolean validateRegistration(UserDetails userDetails);
 	
