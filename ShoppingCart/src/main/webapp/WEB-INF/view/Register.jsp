@@ -90,10 +90,7 @@
 	                      <form:label path="user.password">Password *</form:label>
 	                      <form:input path="user.password" type="password" class="form-control" name="password" required="required"/>
 	                    </div>
-	                     <div class="form-group">
-	                      <form:label path="user.password">Confirm Password *</form:label>
-	                      <form:input path="user.password" type="password" class="form-control" name="password" required="required"/>
-	                    </div>
+	                     
 	                    * <small>Required Fields</small>
 	                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
 	                    <button type="button" class="btn btn-link btn-block"><span>Already have an account?</span> Log in</button>

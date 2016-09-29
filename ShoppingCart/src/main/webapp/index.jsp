@@ -11,35 +11,36 @@
 
 
 	<!-- Wrapper for slides -->
-	<div class="carousel-inner" role="listbox">
+	<div class="carousel-inner" role="listbox"
+	style="width: 100%; height: 500px !important;">
 		<div class="item active">
-			<img class="first-slide" src="resources/image/perfume1.jpg"
-				alt="First slide" width="100%" height="360">
+			<img class="first-slide" src="resources/image/home/carousel/perfume1.jpg"
+				alt="First slide" >
 		</div>
 
 		<div class="item">
-			<img class="second-slide" src="resources/image/perfume2.jpg"
-				alt="Second slide" width="100%" height="360">
+			<img class="second-slide" src="resources/image/home/carousel/perfume2.jpg"
+				alt="Second slide" >
 		</div>
 
 		<div class="item">
-			<img class="third -slide" src="resources/image/perfume3.jpg"
-				alt="Third slide" width="100%" height="360">
+			<img class="third -slide" src="resources/image/home/carousel/perfume3.jpg"
+				alt="Third slide" >
 		</div>
 
 		<div class="item">
-			<img class="fourth -slide" src="resources/image/perfume4.jpg"
-				alt="Third slide" width="100%" height="360">
+			<img class="fourth -slide" src="resources/image/home/carousel/perfume4.jpg"
+				alt="Fourth slide" >
 		</div>
 
 		<div class="item">
-			<img class="fifth -slide" src="resources/image/perfume5.jpg"
-				alt="Third slide" width="100%" height="360">
+			<img class="fifth -slide" src="resources/image/home/carousel/perfume5.jpg"
+				alt="Fifth slide" >
 		</div>
 
 		<div class="item">
-			<img class="sixth -slide" src="resources/image/perfume6.jpg"
-				alt="Third slide" width="100%" height="360">
+			<img class="sixth -slide" src="resources/image/home/carousel/perfume6.jpg"
+				alt="Sixth slide" >
 		</div>
 
 
@@ -79,7 +80,7 @@
 				<div class="image"
 					onclick="location.href='SingleProduct';">
 					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/featuredproducts1.jpg"
+						<img src="resources/image/home/featuredproducts/FG-01.jpg"
 							alt="featureproducts-image">
 						<div class="masking">
 							<a href="ProductGrid" class="btn viewBtn">View
@@ -93,7 +94,7 @@
 				<div class="image"
 					onclick="location.href='SingleProduct';">
 					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/featuredproducts2.jpg"
+						<img src="resources/image/home/featuredproducts/FG-02.jpg"
 							alt="featureproducts-image">
 						<div class="masking">
 							<a href="ProductGrid" class="btn viewBtn">View
@@ -107,7 +108,7 @@
 				<div class="image"
 					onclick="location.href='SingleProduct';">
 					<div class="imageWrapper">
-						<img src="resources/image/home/featuredproducts/featuredproducts3.jpg"
+						<img src="resources/image/home/featuredproducts/PF-01.jpg"
 							alt="featureproducts-image">
 						<div class="masking">
 							<a href="ProductGrid" class="btn viewBtn">View
