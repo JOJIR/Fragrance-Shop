@@ -19,6 +19,7 @@ public class UserTest {
 			User user = (User) context.getBean("user");
 			user.setFirstName("bcd");
 			user.setLastName("bcd");
+			user.setRole("ROLE_USER");
 			user.setPassword("password");
 			user.setEmail("testuser@gmail.com");
 			user.setContactNo("5555555555");
@@ -28,6 +29,8 @@ public class UserTest {
 				System.out.println("user created successfully");
 			else
 				System.out.println("not able to create the user");
+			
+			userDAO.delete("email");
 			
 			context.close();
 		}

@@ -38,8 +38,41 @@ public class TestCaseProduct {
 			productDAO = (ProductDAO) context.getBean("productDAO");
 			product = (Product) context.getBean("product");
 		}
-	
+		
+		
+		
+		@Test
+		public void listProductTestCase()
+		{
+			assertEquals("List Product", 14, productDAO.list(0).size());
+		}
+		
+		
+		@Test
+		public void updateProductTestCase()
+		{
+			product.setId("MOB_004");
+			product.setName("htc");
+			product.setPrice(BigDecimal.valueOf(64000));
+			product.setDescription("htc desc");
+			assertEquals("Update Product", true, productDAO.update(product));
+		}
+		
 
+		@Test
+		public void getProductTestCase()
+		{
+			assertNotNull(productDAO.get("MOB_004"));
+		}
+		
+		
+		
+		@Test
+		public void deleteProductTestCase()
+		{
+			assertEquals("Delete Product", true, productDAO.delete("MOB_004"));
+		}
+	
 		@Test
 		public void addProductTestCase()
 		{
@@ -52,36 +85,6 @@ public class TestCaseProduct {
 			assertEquals("Add Product", true, productDAO.save(product));
 		}
 		
-		@Test
-		public void listProductTestCase()
-		{
-			assertEquals("List Product", 1, productDAO.list(0).size());
-		}
-	
-
-		@Test
-		public void updateProductTestCase()
-		{
-			product.setId("MOB_004");
-			product.setName("htc");
-			product.setPrice(BigDecimal.valueOf(64000));
-			product.setDescription("htc desc");
-	
-
-			assertEquals("Update Product", true, productDAO.update(product));
-		}
-	
-
-		@Test
-		public void getProductTestCase()
-		{
-			assertNotNull(productDAO.get("MOB_004"));
-		}
 		
-		@Test
-		public void deleteProductTestCase()
-		{
-			assertEquals("Delete Product", true, productDAO.delete("MOB_004"));
-		}
 	}
 
