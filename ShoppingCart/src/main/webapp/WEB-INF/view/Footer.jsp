@@ -8,42 +8,42 @@
 <div class="row">
    <div class="col-sm-2 col-xs-12">
 
-<h3>Information</h3>
+<h3><font color="skyblue">Information</font></h3>
 <ul>
-<li><a href="">About Us</a></li>
-<li><a href="">Delivery </a></li>
-<li><a href="">Privacy Policy</a></li>
-<li><a href="">Terms &amp; Conditions</a></li>
+<li><a href=""><font color="darkgrey">About Us</font></a></li>
+<li><a href=""><font color="darkgrey">Delivery </font></a></li>
+<li><a href=""><font color="darkgrey">Privacy Policy</font></a></li>
+<li><a href=""><font color="darkgrey">Terms &amp; Conditions</font></a></li>
 </ul>
 </div>
 <div class="col-sm-2 col-xs-12">
-<h3>Customer Service</h3>
+<h3><font color="skyblue">Customer Service</font></h3>
 <ul>
-<li><a href="">Contact Us</a></li>
-<li><a href="">Returns</a></li>
-<li><a href="">Site Map</a></li>
+<li><a href=""><font color="darkgrey">Contact Us</font></a></li>
+<li><a href=""><font color="darkgrey">Returns</font></a></li>
+<li><a href=""><font color="darkgrey">Site Map</font></a></li>
 </ul>
 </div>
  <div class="col-sm-2 col-xs-12">
-<h3>Extras</h3>
+<h3><font color="skyblue">Extras</font></h3>
 <ul>
-<li><a href="">Brands</a></li>
-<li><a href="">Gift Vouchers</a></li>
-<li><a href="">Affiliates</a></li>
-<li><a href="">Specials</a></li>
+<li><a href=""><font color="darkgrey">Brands</font></a></li>
+<li><a href=""><font color="darkgrey">Gift Vouchers</font></a></li>
+<li><a href=""><font color="darkgrey">Affiliates</font></a></li>
+<li><a href=""><font color="darkgrey">Specials</font></a></li>
 </ul>
 </div>
  <div class="col-sm-2 col-xs-12">
-<h3>My Account</h3>
+<h3><font color="skyblue">My Account</font></h3>
 <ul>
-<li><a href="">My Account</a></li>
-<li><a href="">Order History</a></li>
-<li><a href="">Wish List</a></li>
-<li><a href="">Newsletter</a></li>
+<li><a href=""><font color="darkgrey">My Account</font></a></li>
+<li><a href=""><font color="darkgrey">Order History</font></a></li>
+<li><a href=""><font color="darkgrey">Wish List</font></a></li>
+<li><a href=""><font color="darkgrey">Newsletter</font></a></li>
 </ul>
 </div>
  <div class="col-sm-2 col-xs-12">
-<h3>Follow Us</h3>
+<h3><font color="skyblue">Follow Us</font></h3>
 <ul>
 <li><a href="http://facebook.com">Facebook</a></li>
 <li><a href="http://twitter.com">Twitter</a></li>
@@ -52,14 +52,14 @@
 </ul>
 </div>
  <div class="col-sm-2 col-xs-12">
-<h3>Online support</h3>
+<h3><font color="skyblue">Online support</font></h3>
 <div class="foot-phone">
 <div class="fleft">
 <i class="icon-phone"></i>
 </div>
 <div class="extra-wrap">
-<div>1-800-234-5677</div>
-<div>1-800-234-5677</div>
+<div><font color="lightblue">1-800-234-5677</font></div>
+<div><font color="lightblue">1-800-235-5677</font></div>
 </div>
 </div>
 <ul>
@@ -67,11 +67,11 @@
 </div>
 </div>
 </div>
-<div id="powered">
+<div class="powered">
 <div class="container">
 <div class="row">
  <div class="col-sm-7 col-xs-12">
-Powered By <a href="http://www.google.com">Google</a> PERFUME POWER &copy; 2016 
+<font color="darkgrey">Powered By </font><a href="http://www.powerperfume.com">POWERPERFUME</a> <font color="darkgrey">Copyright &copy; 2016</font> 
 </div>
 </div>
 </div>

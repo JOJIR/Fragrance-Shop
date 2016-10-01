@@ -25,7 +25,7 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	@Transactional
-	public List<Product> list(int sortOrder) {
+	public String listHelper(int sortOrder) {
 		
 		String sort = "name";
 		
@@ -48,12 +48,18 @@ public class ProductDAOImpl implements ProductDAO {
 		case 5:
 			sort = "id";
 			break;
-			default:
+		default:
 				sort = "name";
 		}
 		
+		return sort;
+	}
+	
+		@Transactional
+		public List<Product> list(int sortOrder)
+		{
 		
-		String hql = "from Product order by " + sort;
+		String hql = "from Product order by " + listHelper(sortOrder);
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Product> list = (List<Product>) query.list();
@@ -62,7 +68,21 @@ public class ProductDAOImpl implements ProductDAO {
 		return list;
 	}
 
-	
+	@Transactional
+	public List<Product> listByCategory(int categoryID, int sortOrder)
+	{
+		String hql = "from Product where categoryID = '" + "' oreder by " + listHelper(sortOrder);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Product> list = (List<Product>) query.list();
+		
+		
+		return list;
+	}
+		
+		
+		
+		
 	@Transactional
 	public Product get(String id)
 	{

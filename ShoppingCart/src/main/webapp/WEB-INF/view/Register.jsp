@@ -83,7 +83,7 @@
 	                      <form:input path="user.contactNo" type="text" class="form-control" name="phoneNumber" required="required"/>
 	                    </div>
 	                    <div class="form-group">
-	                      <form:label path="user.email">Enter Email *${error}</form:label>
+	                      <form:label path="user.email">Email *${error}</form:label>
 	                      <form:input path="user.email" type="email" class="form-control" name="email" required="required"/>
 	                    </div>
 	                    <div class="form-group">
@@ -92,8 +92,8 @@
 	                    </div>
 	                     
 	                    * <small>Required Fields</small>
-	                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
-	                    <button type="button" class="btn btn-link btn-block"><span>Already have an account?</span> Log in</button>
+	                    <button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+	                    <a href=Login><button type="button" class="btn btn-link btn-block"><span>Already have an account?</span> Log in</button></a>
 	                  </form:form>
 	                </div>
 	              </div>

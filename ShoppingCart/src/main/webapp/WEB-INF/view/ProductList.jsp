@@ -6,7 +6,7 @@
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-                <h2>Product List View</h2>
+               
               </div>
             </div>
             <div class="col-xs-6">
@@ -34,20 +34,18 @@
                     <ul class="nav navbar-nav side-nav">
                       <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#men">Men <i class="fa fa-plus"></i></a>
-                        <ul id="women" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Fragrance Men <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Deodorant Men <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Perfume Men <span>(5)</span></a></li>
-
-                        </ul>
+                        <ul id="men" class="collapse collapseItem">
+                          <c:forEach items="${maleCategoryList}" var="maleCategory">
+		                   	<li><a href="/ShoppingCart/ProductList?category==${maleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${maleCategory.name}</a></li>
+		                  	</c:forEach>
+		                  </ul>
                       </li>
                                 <li><a href="javascript:;" data-toggle="collapse" data-target="#women">Women <i class="fa fa-plus"></i></a>
-                        <ul id="men" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Fragrance Women <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Deodorant Women <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Perfume Women <span>(5)</span></a></li>
-
-                        </ul>
+                        <ul id="women" class="collapse collapseItem">
+                        <c:forEach items="${femaleCategoryList}" var="femaleCategory">
+                          <li><a href="/ShoppingCart/ProductList?category==${femaleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${femaleCategory.name}</a></li>
+							</c:forEach>
+						</ul>
                       </li>
                         </ul>
                   </div>
@@ -80,11 +78,11 @@
 								<div class="media-body">
 									<div class="col-xs-10 content-wrap">
 										<h4 class="media-heading">
-											<a href="SingleProduct">${product.name}</a>
+											<a href="SingleProduct"><font color="violet">${product.name}</font></a>
 										</h4>
-										<p>${product.description}</p>
-										<h3>$${product.price}</h3>
-										<div class="btn-group" role="group">
+										<p><font color="lightblue">${product.description}</font></p>
+										<h3><font color="darkgrey">$${product.price}</font></h3>
+										<div class="btn<-group" role="group">
 											
 											<button type="button" class="btn btn-default"
 												onclick="location.href='cart-page.html';">

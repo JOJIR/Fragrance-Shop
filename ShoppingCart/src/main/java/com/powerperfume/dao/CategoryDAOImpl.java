@@ -26,8 +26,8 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 
-	@Transactional
-	public List<Category> list(int sortOrder)
+	
+	private String listHelper(int sortOrder)
 	{
 		String sort = "name";
 		
@@ -47,7 +47,14 @@ public class CategoryDAOImpl implements CategoryDAO
 				sort = "name";
 		}
 		
-		String hql = "from Category order by " + sort;		
+		return sort;
+	}
+	
+	@Transactional
+	public List<Category> list(int sortOrder)
+	{
+		
+		String hql = "from Category order by " + listHelper(sortOrder);		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Category> list = (List<Category>) query.list();
@@ -58,20 +65,31 @@ public class CategoryDAOImpl implements CategoryDAO
 
 
 	@Transactional
-	public Category get(String id)
+	public List<Category> listFlag(boolean isMale, int sortOrder)
 	{
-		String hql = "from Category where id = '" + id + "'";
+		String hql = "from Category where is_male = " + isMale + " order by " + listHelper(sortOrder);
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Category> list = (List<Category>) query.list();
 
 
-		if (list != null && !list.isEmpty())
+		
+		
+			return list;
+		}
+
+	public Category get(String id)
+	{
+		String hql = "from Category where id = '" + id + "'";
+		Query  query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Category> list = (List<Category>)query.list();
+		
+		if(list != null && !list.isEmpty())
 		{
 			return list.get(0);
 		}
-
-
+		
 		return null;
 	}
 	

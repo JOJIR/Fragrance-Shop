@@ -8,6 +8,8 @@ public interface ProductDAO {
 
 
 	public List<Product> list(int sortOrder);
+	
+	public List<Product> listByCategory(int categoryID, int sortOrder);
 
 	public Product get(String id);
 

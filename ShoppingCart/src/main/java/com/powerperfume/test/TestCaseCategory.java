@@ -78,7 +78,7 @@ public class TestCaseCategory {
 		@Test
 		public void categoryGetTestCase()
 		{
-			category = categoryDAO.get("CT-001");
+			category = categoryDAO.get("C08");
 			assertNotNull(category);
 			assertEquals("Get Category", "Fragrance Men", category.getName());
 		}
@@ -87,6 +87,7 @@ public class TestCaseCategory {
 		{
 			assertEquals("Delete Category", true, categoryDAO.delete("C08"));
 		}
+		
 		
 		
 	}

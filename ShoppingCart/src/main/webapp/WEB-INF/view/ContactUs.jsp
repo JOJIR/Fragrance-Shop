@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<div class="page-title">
-						<h2><font color='violet'>Contact Us</font></h2>
+						<h2><font color='skyblue'>Contact Us</font></h2>
 					</div>
 				</div>
 				<div class="col-xs-6">
@@ -34,15 +34,15 @@
             <form>
             <legend><span class="glyphicon glyphicon-globe"></span><font color='violet'> Our office</font></legend>
             <address>
-                <strong><font color='white'>POWER PERFUME.</strong><br>
-                795 Arcade, Suite 600<br>
-                India, CA 94105</font><br>
+                <strong><font color="lightblue">POWER PERFUME.</font></strong><br>
+                <font color="darkgrey">795 Arcade, Suite 600</font><br>
+                <font color="darkgrey">KBR, CA 94105</font><br>
                 <abbr title="Phone">
-                    <font color='red'>P</font><font color='white'>:</font></abbr>
-                <font color='blue'>(123) 456-7890</font>
+                    <font color="violet">P</font><font color="blue"><strong> : </strong></font></abbr>
+                <font color="lightblue">(123) 456-7890</font>
             </address>
             <address>
-                <strong><font color='white'>Full Name</font></strong><br>
+                <strong><font color="lightblue">info@</font></strong><br>
                 <a href="mailto:#">powerperfume@outlook.com</a>
             </address>
             </form>

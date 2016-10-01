@@ -76,7 +76,7 @@
 												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-01.jpg"
 													alt="featureproducts-image">
 												<div class="masking">
-													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
 												</div>
 											</div>
 
@@ -88,7 +88,7 @@
 												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-02.jpg"
 													alt="featureproducts-image">
 												<div class="masking">
-													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
 												</div>
 											</div>
 
@@ -100,7 +100,7 @@
 												<img class="indexproducts" src="resources/image/home/featuredproducts/PF-01.jpg"
 													alt="featureproducts-image">
 												<div class="masking">
-													<a href="ProductGrid" class="btn viewBtn">View Products</a>
+													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
 												</div>
 											</div>
 
@@ -145,8 +145,8 @@
 	</div>
 	<div class="clear"></div>
 </div>
-</div>
-</div>
+
+
 <div class="clear"></div>
 <script type="text/javascript">
 	var elem = document.getElementById("LinkHome");

@@ -1,8 +1,8 @@
 .indexproducts
 {
-	max-width:250px;
+	max-width:200px;
 }
-element.style {
+.style {
 }
 .fullscreenbanner .tp-dottedoverlay.twoxtwo {
 background-image: none!important;
@@ -103,7 +103,7 @@ font-family: sans-serif;
 {
 	width:80px;
 	position:relative;
-	bottom:85px;
+	bottom:70px;
 }
 
 
@@ -193,7 +193,7 @@ font-size: 24px;
 }
 
 
-element.style {
+.style {
 }
 .box .box-heading {
 background: url(../image/heading.png) repeat-x left top #9a9a9a;
@@ -233,7 +233,7 @@ font-size: 100%;
 }
 
 
-lement.style {
+.style {
 }
 .box .box-content .box-product ul li:hover .image2 img {
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -261,7 +261,7 @@ vertical-align: middle;
 border: 0;
 -ms-interpolation-mode: bicubic;
 }
-Inherited from a
+
 a:hover {
 color: #ff7f66;
 }
@@ -286,7 +286,7 @@ user agent stylesheeta:-webkit-any-link {
 color: -webkit-link;
 cursor: auto;
 }
-Inherited from div.image
+.image
 .product-grid .image, .box-product .image2 {
 text-align: center;
 }
@@ -304,11 +304,11 @@ list-style: none;
 user agent stylesheetul, menu, dir {
 list-style-type: disc;
 }
-Inherited from div#container
+
 #container {
 text-align: left;
 }
-Inherited from body.common-home
+.common-home
 body {
 color: #7e7e7e;
 font-family: Arial, Helvetica, sans-serif;
@@ -321,14 +321,13 @@ font-size: 14px;
 line-height: 20px;
 color: #333333;
 }
-Inherited from html
+
 html {
 font-size: 100%;
 }
 
 
-element.style {
-}
+
 @media (min-width: 767px)
 .banner>div:hover .s-desc {
 padding-left: 43%;
@@ -358,7 +357,7 @@ text-transform: uppercase;
 user agent stylesheetdiv {
 display: block;
 }
-Inherited from a
+
 a:hover {
 color: #ff7f66;
 }
@@ -407,8 +406,7 @@ font-size: 100%;
 
 
 
-element.style {
-}
+
 .banner .s-desc h1 {
 font-size: 40px;
 line-height: 40px;
@@ -649,7 +647,7 @@ font-size: 1.17em;
 -webkit-margin-end: 0px;
 font-weight: bold;
 }
-Inherited from div.s-desc
+
 .banner .s-desc {
 text-align: left;
 color: #838383;
@@ -807,7 +805,7 @@ Pseudo ::after element
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-Inherited from body
+
 body {
 font-family: 'Oxygen',sans-serif;
 font-size: 12px;
@@ -821,7 +819,7 @@ font-size: 14px;
 line-height: 1.42857143;
 color: #333;
 }
-Inherited from html
+
 html {
 font-size: 10px;
 }
@@ -829,8 +827,7 @@ html {
 font-family: sans-serif;
 }
 
-element.style {
-}
+
 .singleProduct .media .productSlider #carousel .item img {
 width: 100%;
 }
@@ -870,11 +867,11 @@ Pseudo ::after element
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-Inherited from div.media
+
 .media, .media-body {
 zoom: 1;
 }
-Inherited from body.padding-top
+
 body {
 font-family: 'Oxygen',sans-serif;
 font-size: 12px;
@@ -888,7 +885,7 @@ font-size: 14px;
 line-height: 1.42857143;
 color: #333;
 }
-Inherited from html
+
 html {
 font-size: 10px;
 }
@@ -905,4 +902,173 @@ transition: all 0.5s ease;
 }
 a img {
 border: none;
+}
+
+footer .foot-phone i {
+line-height: normal;
+font-size: 40px;
+color: #ff7f66;
+width: 1.25em;
+margin-right: 10px;
+}
+[class^="icon-"], [class*=" icon-"] {
+display: inline;
+width: auto;
+height: auto;
+line-height: normal;
+vertical-align: baseline;
+background-image: none;
+background-position: 0% 0%;
+background-repeat: repeat;
+margin-top: 0;
+}
+[class^="icon-"], [class*=" icon-"] {
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal;
+text-decoration: inherit;
+-webkit-font-smoothing: antialiased;
+}
+[class^="icon-"], [class*=" icon-"] {
+display: inline-block;
+width: 14px;
+height: 14px;
+margin-top: 1px;
+line-height: 14px;
+vertical-align: text-top;
+background-image: url("../image/glyphicons-halflings.png");
+background-position: 14px 14px;
+background-repeat: no-repeat;
+}
+user agent stylesheeti, cite, em, var, address, dfn {
+font-style: italic;
+}
+Pseudo ::before element
+.icon-phone:before {
+content: "\f095";
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+text-decoration: inherit;
+display: inline-block;
+speak: none;
+}
+Inherited from div.fleft
+footer .foot-phone div {
+color: #9d9d9d;
+line-height: 22px;
+}
+Inherited from body.common-home
+body {
+color: #7e7e7e;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+line-height: 18px;
+}
+body {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333333;
+}
+Inherited from html
+html {
+font-size: 100%;
+}
+
+
+.topBar ul.pull-right li:first-child span a {
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.topBar ul.pull-right li a {
+font-size: 25px;
+display: inline-block;
+}
+.topBar ul li a {
+padding: 0 3px;
+display: block;
+line-height: 35px;
+font-size: 14px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+color: #ffffff!important;
+}
+a {
+color: #d9d9d9;
+text-decoration: none!important;
+}
+a {
+color: #337ab7;
+text-decoration: none;
+}
+a {
+background-color: transparent;
+}
+* {
+outline: 0;
+margin: 0;
+padding: 0;
+}
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+user agent stylesheeta:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}
+Pseudo ::before element
+:after, :before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+Pseudo ::after element
+:after, :before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+Inherited from li
+ul li {
+list-style-type: none;
+}
+user agent stylesheetli {
+text-align: -webkit-match-parent;
+}
+Inherited from ul.list-inline.pull-right
+.list-inline {
+list-style: none;
+}
+user agent stylesheetul, menu, dir {
+list-style-type: disc;
+}
+Inherited from body
+body {
+font-family: 'Oxygen',sans-serif;
+font-size: 12px;
+line-height: 18px;
+color: #252525;
+font-weight: 400;
+}
+body {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+}
+l
+html {
+font-size: 10px;
+}
+html {
+font-family: sans-serif;
 }

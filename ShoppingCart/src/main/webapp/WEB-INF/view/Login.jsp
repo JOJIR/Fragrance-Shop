@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="page-title">
-						<h2><font color='white'>Login</font></h2>
+						<h2><font color='skyblue'>Login</font></h2>
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -28,9 +28,6 @@
 						<div class="panel-heading">
 							<h3>Login</h3>
 						</div>
-      
-				
-                               <font color='white'> or</font>
                                <div class="panelbody">
 								 <form:form class="form" action="LoginAttempt" method="POST" modelAttribute="user" role="form">
 										<div class="form-group">
@@ -54,7 +51,7 @@
 								 </form:form>
 							</div>
 								<div class="bottom text-center">
-								New here ? <a href="#"><b>REGISTER</b></a>
+								New here ? <a href="Register"><b><font color="darkviolet"><button>Create an account</button></font></b></a>
 							</div>
 						
 						</div>
