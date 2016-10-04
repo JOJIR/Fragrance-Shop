@@ -1,6 +1,12 @@
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+display: block;
+height: auto;
+line-height: 1;
+width: 100%;
+}
 .indexproducts
 {
-	max-width:200px;
+	max-width:175px;
 }
 .style {
 }

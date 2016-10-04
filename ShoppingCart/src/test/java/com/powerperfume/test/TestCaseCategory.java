@@ -76,16 +76,17 @@ public class TestCaseCategory {
 		
 		
 		@Test
+		public void categoryDeleteTestCase()
+		{
+			assertEquals("Delete Category", true, categoryDAO.delete("C08"));
+		}
+
+		@Test
 		public void categoryGetTestCase()
 		{
 			category = categoryDAO.get("C08");
 			assertNotNull(category);
 			assertEquals("Get Category", "Fragrance Men", category.getName());
-		}
-		@Test
-		public void categoryDeleteTestCase()
-		{
-			assertEquals("Delete Category", true, categoryDAO.delete("C08"));
 		}
 		
 		

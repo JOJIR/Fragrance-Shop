@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<div class="page-title">
-					<h2>Product List View</h2>
+					
 				</div>
 			</div>
 			<div class="col-xs-6">
@@ -79,13 +79,13 @@
 								<div class="media-body">
 									<div class="col-xs-10 content-wrap">
 										<h4 class="media-heading">
-											<a href="SingleProduct">${product.name}</a>
+											<a href="SingleProduct"><font color="violet">${product.name}</font></a>
 										</h4>
-										<p>${product.description}</p>
-										<h3>$${product.price}</h3>
+										<p><font color="lightblue">${product.description}</font></p>
+										<h3><font color="darkgrey">$${product.price}</font></h3>
 										<ul class="list-inline">
-											<li><h4>Category ID:${product.categoryID}</h4></li>
-											<li><h4>Supplier ID:${product.supplierID}</h4></li>
+											<li><h4><font color="darkgrey">Category ID:${product.categoryID}</font></h4></li>
+											<li><h4><font color="darkgrey">Supplier ID:${product.supplierID}</font></h4></li>
 										</ul>
 										<div class="btn-group" role="group">
 										<button type="button" class="btn btn-default"

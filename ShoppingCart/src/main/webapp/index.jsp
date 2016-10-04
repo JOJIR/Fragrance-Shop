@@ -7,6 +7,7 @@
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
 	</ol>
 
 
@@ -57,7 +58,7 @@
 		</a>
 	</div>
 
-	<br> <br> <br> <br> <br>
+	<br>  
 
 	<div class="box featured">
 		<div class="box-heading">Featured Products</div>

@@ -77,7 +77,7 @@ public class CategoryDAOImpl implements CategoryDAO
 		
 			return list;
 		}
-
+	@Transactional
 	public Category get(String id)
 	{
 		String hql = "from Category where id = '" + id + "'";
