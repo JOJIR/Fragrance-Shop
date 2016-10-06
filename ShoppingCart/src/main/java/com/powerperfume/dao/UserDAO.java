@@ -3,7 +3,7 @@ package com.powerperfume.dao;
 import java.util.List;
 
 import com.powerperfume.model.User;
-import com.powerperfume.model.UserDetails;
+
 
 
 
@@ -22,8 +22,8 @@ public interface UserDAO {
 	
 	public User getValidUser(User user);
 	
-	public boolean validateRegistration(UserDetails userDetails);
+	public boolean validateRegistration(User user);
 	
-	public void registerUser(UserDetails userDetails); 
+	public void registerUser(User user); 
 }
 

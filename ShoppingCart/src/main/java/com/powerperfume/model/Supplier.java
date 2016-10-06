@@ -1,11 +1,16 @@
 package com.powerperfume.model;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -13,10 +18,8 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	private int id;
-	private String name;
-	private String address;
 	
 	public int getId() {
 		return id;
@@ -41,7 +44,21 @@ public class Supplier {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	@NotBlank(message = "Supplier Name cannot be blank")
+	private String name;
 	
-
+	@NotBlank(message = "Supplier Address cannot be blank")
+	private String address;
+	
+	@OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+	private List<Product> products = new ArrayList<Product>();
 }
-

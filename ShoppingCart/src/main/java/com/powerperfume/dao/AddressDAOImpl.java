@@ -15,6 +15,9 @@ import com.powerperfume.model.Address;
 public class AddressDAOImpl implements AddressDAO {
 	
 	@Autowired
+	Address address;
+	
+	@Autowired
 	private SessionFactory sessionFactory;
 	
 	public AddressDAOImpl(SessionFactory sessionFactory)
@@ -25,27 +28,24 @@ public class AddressDAOImpl implements AddressDAO {
 	@Transactional
 	public List<Address> list(int sortOrder)
 	{
-		String sort = "email";
+		String sort = "id";
 		
 		switch(sortOrder)
 		{
 			case 0:
-				sort = "email";
-				break;
-			case 1:
 				sort = "street";
 				break;
-			case 2:
+			case 1:
 				sort = "city";
 				break;
-			case 3:
-				sort = "is_shipping";
+			case 2:
+				sort = "pin";
 				break;
 			case 4:
 				sort = "id";
 				break;
 			default:
-				sort = "email";
+				sort = "id";
 			
 				}
 		String hql = "from Address order by " + sort;
@@ -63,21 +63,8 @@ public class AddressDAOImpl implements AddressDAO {
 	@Transactional
 	public Address get(int id)
 	{
+		return sessionFactory.getCurrentSession().get(Address.class, id);
 		
-		String hql = "from Address where id = " + id;
-		
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		
-				@SuppressWarnings("unchecked")
-				List<Address> list = (List<Address>) query.list();
-				
-				
-				if (list != null && !list.isEmpty())
-				{
-					return list.get(0);
-				}
-				
-				return null;
 	}
 	
 	public String byEmail(String email)
@@ -87,18 +74,7 @@ public class AddressDAOImpl implements AddressDAO {
 		
 	}
 	
-	@Transactional
-	public List<Address> getAll(String hql)
-	{
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
-		@SuppressWarnings("unchecked")
-		List<Address> list = (List<Address>) query.list();
-		
-		return list;
-	}
-		
-	
 	@Transactional
 	public boolean save(Address address)
 	{
@@ -134,7 +110,6 @@ public class AddressDAOImpl implements AddressDAO {
 	@Transactional
 	public boolean delete(int id)
 	{
-	Address address = new Address();
 	address.setId(id);
 	
 	try
@@ -151,23 +126,5 @@ public class AddressDAOImpl implements AddressDAO {
 		return true;
 	}
 	
-	public boolean deleteAll(String hql)
-	{
-		List<Address> addressList = getAll(hql);
-		
-		try
-		{
-			for(Address address: addressList)
-				
-				sessionFactory.getCurrentSession().delete(address);
-		}
-		catch(Exception e)
-		{
-			System.out.println("Exception on deleting all address by hql: " + hql + "Exception :" +e);
-			return false;
-		}
-			return true;
-	}
 	
-
 }

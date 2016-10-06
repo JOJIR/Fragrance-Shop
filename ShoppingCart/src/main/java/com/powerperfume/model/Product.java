@@ -2,11 +2,15 @@ package com.powerperfume.model;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,79 +19,93 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 
 	@Id
-	private String  id;
+	@NotBlank(message = "Product ID cannot be blank")
+	private String id;
+	
+	@NotBlank(message = "Product Name cannot be blank")
 	private String name;
 	private String description;
+	
+	@Min(0)
 	private BigDecimal price;
+	
+	@Min(0)
 	private int quantity;
 	
+	@ManyToOne
+	@JoinColumn(name = "category_id", nullable = false, insertable = false, updatable = false)
+	private Category category;
 	
-	@Column(name = "category_id")
-	private String categoryID;
-	
-	@Column(name = "supplier_id")
-	private String supplierID;
-	
+	@ManyToOne
+	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
+	private Supplier supplier;
 	
 	@Transient
 	private MultipartFile image;
-	
-	
+
 	
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public BigDecimal getPrice() {
 		return price;
 	}
+
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-	
-	public int getQuantity(){
+
+	public int getQuantity() {
 		return quantity;
 	}
-	
-	public void setQuantity(int quantity){
+
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	public String getCategoryID() {
-		return categoryID;
+
+	public Category getCategory() {
+		return category;
 	}
-	
-	
-	public void setCategoryID(String categoryID) {
-		this.categoryID = categoryID;
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	public String getSupplierID() {
-		return supplierID;
+
+	public Supplier getSupplier() {
+		return supplier;
 	}
-	public void setSupplierID(String supplierID) {
-		this.supplierID = supplierID;
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
-	
+
 	public MultipartFile getImage() {
 		return image;
 	}
+
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
 	
-
 }

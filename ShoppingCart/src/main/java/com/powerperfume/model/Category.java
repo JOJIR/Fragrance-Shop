@@ -1,11 +1,16 @@
 package com.powerperfume.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 
@@ -13,60 +18,59 @@ import org.springframework.stereotype.Component;
 @Component
 public class Category
 {
+
 	@Id
+	@NotBlank(message = "Category ID cannot be blank")
 	private String id;
+	
+	@NotBlank(message = "Category Name cannot be blank")
 	private String name;
 	private String description;
 	
 	@Column(name = "is_male")
-	private boolean isMale;
-
-
-	public String getId()
-	{
+	private boolean isMale = true;
+	
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+	private List<Product> products = new ArrayList<Product>();
+	
+	public String getId() {
 		return id;
 	}
 
-
-	public void setId(String id)
-	{
+	public void setId(String id) {
 		this.id = id;
 	}
 
-
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-
-	public void setName(String name)
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
-
-	public String getDescription()
-	{
+	public String getDescription() {
 		return description;
 	}
 
-
-	public void setDescription(String description)
-	{
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
-	public boolean isMale()
-	{
+	public boolean isMale() {
 		return isMale;
 	}
 
-
-	public void setMale(boolean isMale)
-	{
+	public void setMale(boolean isMale) {
 		this.isMale = isMale;
 	}
-}
 
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+}

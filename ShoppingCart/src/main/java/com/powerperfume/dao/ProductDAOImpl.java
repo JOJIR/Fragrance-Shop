@@ -13,8 +13,10 @@ import com.powerperfume.dao.ProductDAO;
 import com.powerperfume.model.Product;
 
 @Repository("productDAO")
-public class ProductDAOImpl implements ProductDAO {
+public class ProductDAOImpl implements ProductDAO{
 	
+	@Autowired
+	Product product;
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -52,7 +54,7 @@ public class ProductDAOImpl implements ProductDAO {
 				sort = "name";
 		}
 		
-		return sort;
+		return sort;	
 	}
 	
 		@Transactional
@@ -69,7 +71,7 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	@Transactional
-	public List<Product> listByCategory(int categoryID, int sortOrder)
+	public List<Product> listByCategory(String categoryID, int sortOrder)
 	{
 		String hql = "from Product where categoryID = '" + "' oreder by " + listHelper(sortOrder);
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -86,17 +88,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Transactional
 	public Product get(String id)
 	{
-		String hql = "from Product where id = '" + id + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Product> list = (List<Product>) query.list();
-		
-		if(list !=null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
-		
-		return null;
+		return sessionFactory.getCurrentSession().get(Product.class, id);
 	}
 	
 	
@@ -135,7 +127,6 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	@Transactional
 	public boolean delete(String id) {
-		Product product = new Product();
 		product.setId(id);
 		
 		try

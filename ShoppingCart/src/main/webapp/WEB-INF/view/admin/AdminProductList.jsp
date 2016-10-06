@@ -1,28 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../user/Header.jsp"%>
 	
-	<%@ include file="Header.jsp"%>
-	<!-- LIGHT SECTION -->
-<section class="lightSection clearfix pageHeader">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="page-title">
-					
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<ol class="breadcrumb pull-right">
-					<li><a href="Home">Home</a></li>
-					<li><a href="AdminHome">Admin Home</a></li>
-					<li class="active">Admin Product List</li>
-				</ol>
-			</div>
-		</div>
-	</div>
-</section>
 
 <!-- MAIN CONTENT SECTION -->
-      <section class="mainContent clearfix productsContent">
+      <section class="adminHome mainContent clearfix productsContent">
         <div class="container">
           <div class="row">
             <div class="col-md-3 col-sm-4  col-xs-12 sideBar">
@@ -34,18 +14,16 @@
                       <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#men">Men <i class="fa fa-plus"></i></a>
                         <ul id="women" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Fragrance Men <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Deodorant Men <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Perfume Men <span>(5)</span></a></li>
-
+                        <c:forEach items="${maleCategoryList}" var="maleCategory">
+                          	<li><a href="/ShoppingCart/AdminProductList?category=${maleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${maleCategory.name}</a></li>
+						</c:forEach>
                         </ul>
                       </li>
                                 <li><a href="javascript:;" data-toggle="collapse" data-target="#women">Women <i class="fa fa-plus"></i></a>
-                        <ul id="men" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Fragrance Women <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Deodorant Women <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Perfume Women <span>(5)</span></a></li>
-
+                        <ul id="women" class="collapse collapseItem">
+                          <c:forEach items="${femaleCategoryList}" var="femaleCategory">
+                          <li><a href="/ShoppingCart/AdminProductList?category=${femaleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${femaleCategory.name}</a></li>
+                        </c:forEach>
                         </ul>
                       </li>
                         </ul>
@@ -74,7 +52,7 @@
 									<img class="media-object indexproducts"
 										src="resources/image/products/${product.id}.jpg" alt="Image">
 									<span class="maskingImage"><a data-toggle="modal"
-										href=".quick-view" class="btn viewBtn">Quick View</a></span>
+										href=".quick-view" class="btn viewBtn"> View</a></span>
 								</div>
 								<div class="media-body">
 									<div class="col-xs-10 content-wrap">
@@ -119,5 +97,5 @@
 					+ this.value;
 		});
 	</script>
-	<%@ include file="Footer.jsp"%>
+	<%@ include file="../user/Footer.jsp"%>
 

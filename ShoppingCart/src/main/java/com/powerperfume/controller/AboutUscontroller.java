@@ -8,7 +8,7 @@ public class AboutUscontroller {
 	@RequestMapping("/AboutUs")
 	public String ShowAboutUs()
 	{
-		return "AboutUs";
+		return "user/AboutUs";
 	}
 
 }

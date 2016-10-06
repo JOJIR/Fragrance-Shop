@@ -16,6 +16,9 @@ import com.powerperfume.model.CardDetails;
 public class CardDetailsDAOImpl implements CardDetailsDAO{
 	
 	@Autowired
+	CardDetails cardDetails;
+	
+	@Autowired
 	private SessionFactory sessionFactory;
 	
 	public CardDetailsDAOImpl(SessionFactory sessionfactory)
@@ -65,18 +68,8 @@ public class CardDetailsDAOImpl implements CardDetailsDAO{
 
 	@Transactional
 	public CardDetails get(int id) {
-		String hql = "from CardDetails where id = " +id;
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<CardDetails> list = (List<CardDetails>) query.list();
 		
-		
-		if(list != null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
-		
-		return null;
+		return sessionFactory.getCurrentSession().get(CardDetails.class, id);
 	}
 
 	@Transactional
@@ -114,7 +107,6 @@ public class CardDetailsDAOImpl implements CardDetailsDAO{
 	@Transactional
 	public boolean delete(int id) {
 		
-		CardDetails cardDetails = new CardDetails();
 		cardDetails.setId(id);
 		
 		try

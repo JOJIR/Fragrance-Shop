@@ -1,4 +1,5 @@
-<%@ include file="Header.jsp"%>
+<%@ include file="../user/Header.jsp"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	<section class="lightSection pageHeader">
 		<div class="container">
 			<div class="row">
@@ -36,21 +37,24 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-xs-12">
-					<div class="panel panel-inverse">
-						<div class="panel-heading">
-							<h3>User </h3>
-						</div>
-						<div id="addUser" class="panel-body">
-							<div class="btn-group-vertical">
-								<button type="button" class="btn btn-primary">Add
-									User</button>
-								<button type="button" class="btn btn-primary">
-									Update Users</button>
-							</div>
+							<div class="col-md-4 col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3>Category </h3>
+					</div>
+					<div id="addCategory" class="panel-body">
+						<div class="btn-group-vertical">
+							<button type="button" class="btn btn-primary"
+							onclick="window.location.href='AddCategory'">Add Category</button>
+							<button type="button" class="btn btn-primary"
+							onclick="window.location.href='AdminCategoryList'">
+								Update Categories</button>
 						</div>
 					</div>
 				</div>
+			</div>
+				
+				
 				<div class="col-md-4 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
@@ -70,5 +74,33 @@
 			</div>
 		</div>
 	</section>
-	<%@ include file="Footer.jsp"%>
+	<c:if test="${isAdminAddProductClicked == true}">
+	<%@ include file="AddProduct.jsp" %>
+</c:if>
+<c:if test="${isAdminEditProductClicked == true}">
+	<%@ include file="EditProduct.jsp" %>
+</c:if>
+<c:if test="${isAdminAddSupplierClicked == true}">
+	<%@ include file="AddSupplier.jsp" %>
+</c:if>
+<c:if test="${isAdminEditSupplierClicked == true}">
+	<%@ include file="EditSupplier.jsp" %>
+</c:if>
+<c:if test="${isAdminAddCategoryClicked == true}">
+	<%@ include file="AddCategory.jsp" %>
+</c:if>
+<c:if test="${isAdminEditCategoryClicked == true}">
+	<%@ include file="EditCategory.jsp" %>
+</c:if>
+<c:if test="${isAdminViewProductsClicked == true}">
+	<%@ include file="AdminProductList.jsp" %>
+</c:if>
+<c:if test="${isAdminViewSuppliersClicked == true}">
+	<%@ include file="AdminSupplierList.jsp" %>
+</c:if>
+<c:if test="${isAdminViewCategoriesClicked == true}">
+	<%@ include file="AdminCategoryList.jsp" %>
+</c:if>
+	
+	<%@ include file="../user/Footer.jsp"%>
 

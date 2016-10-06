@@ -17,7 +17,9 @@ import com.powerperfume.model.Supplier;
 @Repository("supplierDAO")
 public class SupplierDAOImpl implements SupplierDAO {
 	
-
+	@Autowired
+	Supplier supplier;
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -59,16 +61,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	@Transactional
 	public Supplier get(int id)
 	{
-		String hql = "from Supplier where id = " + id ;
-		Query query =sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Supplier> list = (List<Supplier>) query.list();
-		
-		if(list != null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
-		return null;
+		return sessionFactory.getCurrentSession().get(Supplier.class, id);
 	}
 	
 	@Transactional

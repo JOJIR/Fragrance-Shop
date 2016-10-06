@@ -16,11 +16,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.powerperfume.model.Address;
 import com.powerperfume.model.CardDetails;
-import com.powerperfume.model.Cart;
 import com.powerperfume.model.Category;
+import com.powerperfume.model.Order;
 import com.powerperfume.model.Product;
 import com.powerperfume.model.Supplier;
 import com.powerperfume.model.User;
+
+
 
 @Configuration
 @ComponentScan("com.powerperfume")
@@ -53,12 +55,12 @@ public class ApplicationContextConfiguration {
 	    	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 	    	sessionBuilder.addProperties(getHibernateProperties());
 	    	sessionBuilder.addAnnotatedClass(Address.class);
-	    	sessionBuilder.addAnnotatedClass(CardDetails.class);
 	    	sessionBuilder.addAnnotatedClass(Category.class);
 	    	sessionBuilder.addAnnotatedClass(Supplier.class);
 	    	sessionBuilder.addAnnotatedClasses(Product.class);
 	    	sessionBuilder.addAnnotatedClass(User.class);
-	    	sessionBuilder.addAnnotatedClass(Cart.class);
+	    	sessionBuilder.addAnnotatedClass(CardDetails.class);
+	    	sessionBuilder.addAnnotatedClass(Order.class);
 	    	return sessionBuilder.buildSessionFactory();
 	    }
 	    

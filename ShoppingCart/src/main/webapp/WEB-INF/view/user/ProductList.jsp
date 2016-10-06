@@ -1,12 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="Header.jsp"%>
-  <!-- LIGHT SECTION -->
+	   <!-- LIGHT SECTION -->
       <section class="lightSection clearfix pageHeader">
         <div class="container">
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-              
+               
               </div>
             </div>
             <div class="col-xs-6">
@@ -15,14 +14,14 @@
                   <a href="Home">Home</a>
                 </li>
                
-                <li class="active">Product Grid</li>
+                <li class="active">Product List </li>
               </ol>
             </div>
           </div>
         </div>
       </section>
       
-           <!-- MAIN CONTENT SECTION -->
+                 <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix productsContent">
         <div class="container">
           <div class="row">
@@ -35,18 +34,17 @@
                       <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#men">Men <i class="fa fa-plus"></i></a>
                         <ul id="men" class="collapse collapseItem">
-                        	<c:forEach items="${maleCategoryList}" var="maleCategory">
-                         		<li><a href="/ShoppingCart/ProductGrid?category=${maleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${maleCategory.name}</a></li>
-							</c:forEach>
-						 </ul>
+                          <c:forEach items="${maleCategoryList}" var="maleCategory">
+		                   	<li><a href="/ShoppingCart/ProductList?category==${maleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${maleCategory.name}</a></li>
+		                  	</c:forEach>
+		                  </ul>
                       </li>
                                 <li><a href="javascript:;" data-toggle="collapse" data-target="#women">Women <i class="fa fa-plus"></i></a>
                         <ul id="women" class="collapse collapseItem">
-							 <c:forEach items="${femaleCategoryList}" var="femaleCategory">
-                         		<li><a href="/ShoppingCart/ProductGrid?category=${femaleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${femaleCategory.name}</a></li>
+                        <c:forEach items="${femaleCategoryList}" var="femaleCategory">
+                          <li><a href="/ShoppingCart/ProductList?category==${femaleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${femaleCategory.name}</a></li>
 							</c:forEach>
-
-                        </ul>
+						</ul>
                       </li>
                         </ul>
                   </div>
@@ -65,39 +63,54 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-						<c:forEach items="${productList}" var="product">
-							<div class="col-sm-4 col-xs-12">
-								<div class="productBox">
-									<div class="productImage clearfix">
-										<img class="indexproducts" src="resources/image/products/${product.id}.jpg" alt="products-img">
-										<div class="productMasking">
-											<ul class="list-inline btn-group" role="group">
-												<li><a href="cart-page.html" class="btn btn-default"><i
-														class="fa fa-shopping-cart"></i></a></li>
-											</ul>
+				<div class="row productListSingle">
+
+					<c:forEach items="${productList}" var="product">
+						<div class="col-xs-12">
+							<div class="media">
+								<div class="media-left">
+									<img class="media-object indexproducts"
+										src="resources/image/products/${product.id}.jpg" alt="Image">
+									<span class="maskingImage"><a data-toggle="modal"
+										href=".quick-view" class="btn viewBtn"> View</a></span>
+								</div>
+								<div class="media-body">
+									<div class="col-xs-10 content-wrap">
+										<h4 class="media-heading">
+											<a href="SingleProduct"><font color="violet">${product.name}</font></a>
+										</h4>
+										<p><font color="lightblue">${product.description}</font></p>
+										<h3><font color="darkgrey">$${product.price}</font></h3>
+										<div class="btn<-group" role="group">
+											
+											<button type="button" class="btn btn-default"
+												onclick="location.href='/ShoppingCart/AddToCart?id=${product.id}';">
+												<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+											</button>
 										</div>
 									</div>
-											<div class="productCaption clearfix">
-										<a href="single-product.html">
-											<h4>${product.name}</h4>
-										</a>
-										<h3><font color="darkgrey">$${product.price}</font></h3>
+									<div class="col-xs-2">
+										<i class="fa fa-times">${product.quantity}</i>
 									</div>
 								</div>
 							</div>
-						</c:forEach>
-					</div>
+						</div>
+					</c:forEach>
+
 				</div>
 			</div>
-		<script>
+		</div>
+      </section>
+	<script>
 		var e = document.querySelector("#sortOrder");
 		e.value = ${sortOrder};
 		e.addEventListener("change", function() {
-			window.location.href = "/ShoppingCart/ProductGrid?" + ${categoryQuery} "sort=" + this.value;
+			window.location.href = "/ShoppingCart/ProductList?" + ${categoryQuery} "sort=" + this.value;
 		});
 	</script>
+	<%@ include file="Footer.jsp"%>
+					
+											
 	
-</section>
-<%@ include file="Footer.jsp"%>
-      
+											
+	

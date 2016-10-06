@@ -8,27 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.powerperfume.dao.AddressDAO;
-import com.powerperfume.dao.CardDetailsDAO;
-import com.powerperfume.dao.UserDAO;
-import com.powerperfume.model.Address;
 
+import com.powerperfume.dao.UserDAO;
+import com.powerperfume.model.CardDetails;
 import com.powerperfume.model.User;
-import com.powerperfume.model.UserDetails;
 
 @Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
 	
 	@Autowired
+	User user;
+	
+	@Autowired
 	private SessionFactory sessionFactory;
-	
-	
-	@Autowired
-	AddressDAO addressDAO;
-	
-	
-	@Autowired
-	CardDetailsDAO cardDetailsDAO;
 	
 	
 	public UserDAOImpl(SessionFactory sessionFactory)
@@ -68,10 +60,10 @@ public class UserDAOImpl implements UserDAO {
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
-		List<User> listUsers = (List<User>) query.list();
+		List<User> list = (List<User>) query.list();
 		
 		
-		return listUsers;
+		return list;
 	}
 	
 	
@@ -79,18 +71,7 @@ public class UserDAOImpl implements UserDAO {
 	@Transactional
 	public User get(String email) {
 		
-		String hql = "from User where email = '" + email + "'";
-		
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<User> list = (List<User>) query.list();
-		
-		if(list != null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
-	
-		return null;
+	return sessionFactory.getCurrentSession().get(User.class, email);
 	}
 
 	@Transactional
@@ -145,32 +126,19 @@ public class UserDAOImpl implements UserDAO {
 	
 	@Transactional
 	public User getValidUser(User user) {
-		String hql = "from User where email = '" + user.getEmail() + "' and password = '" + user.getPassword() + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<User> list = (List<User>) query.list();
 		
-		if(list != null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
+		User u = get(user.getEmail());
+		if(u != null && u.getPassword().equals(user.getPassword())) return u;
 		
 		return null;
 	}
 
 	
 	@Transactional
-	public boolean validateRegistration(UserDetails userDetails) {
+	public boolean validateRegistration(User user) {
 	
-		if(userDetails.getUser().getEmail() == null)
-		return false;
+		if(user.getEmail() == null || get(user.getEmail()) != null)
 		
-		String hql = "from User where email = '" + userDetails.getUser().getEmail() + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<User> list = (List<User>) query.list();
-		
-		if(list != null && !list.isEmpty())
 			return false;
 	
 		return true;
@@ -178,18 +146,13 @@ public class UserDAOImpl implements UserDAO {
 	
 	
 	@Transactional
-	public void registerUser(UserDetails userDetails) {
+	public void registerUser(User user) {
 		
-		userDetails.getUser().setRole("ROLE_USER");
-		save(userDetails.getUser());
-		String email = userDetails.getUser().getEmail();
-		userDetails.getShippingAddress().setEmail(email);
-		userDetails.getBillingAddress().setEmail(email);
-		userDetails.getCardDetails().setEmail(email);
-		
-		addressDAO.save(userDetails.getShippingAddress());
-		addressDAO.save(userDetails.getBillingAddress());
-		cardDetailsDAO.save(userDetails.getCardDetails());
+	user.setRole("ROLE_USER");
+	for(CardDetails c : user.getCardDetails())
+		c.setUser(user);
+	save(user);
+
 		
 	}
 	

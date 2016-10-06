@@ -17,6 +17,9 @@ import com.powerperfume.model.Category;
 public class CategoryDAOImpl implements CategoryDAO
 {
 	@Autowired
+	Category category;
+	
+	@Autowired
 	private SessionFactory sessionFactory;
 
 
@@ -80,17 +83,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	@Transactional
 	public Category get(String id)
 	{
-		String hql = "from Category where id = '" + id + "'";
-		Query  query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Category> list = (List<Category>)query.list();
-		
-		if(list != null && !list.isEmpty())
-		{
-			return list.get(0);
-		}
-		
-		return null;
+		return sessionFactory.getCurrentSession().get(Category.class, id);
 	}
 	
 	@Transactional
@@ -130,7 +123,6 @@ public class CategoryDAOImpl implements CategoryDAO
 	@Transactional
 	public boolean delete(String id)
 	{
-		Category category = new Category();
 		category.setId(id);
 		
 		try

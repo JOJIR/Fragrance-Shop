@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	
 <%@include file="Header.jsp"  %>
@@ -61,6 +61,10 @@
 			</div>
 	
 		</section>
+		<c:if test="${invalidCredentials == true}">
+	<%@ include file="InvalidCredentials.jsp"%>
+	</c:if>
+		
 		
 		<script type="text/javascript">
 		var elem = document.getElementById("LinkLogin");

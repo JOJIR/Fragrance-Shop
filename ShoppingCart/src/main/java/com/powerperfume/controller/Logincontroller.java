@@ -1,5 +1,8 @@
 package com.powerperfume.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,37 +21,65 @@ public class LoginController{
 	@Autowired
 	UserDAO userdao;
 	
+	@Autowired
+	HttpSession session;
+	
 	@RequestMapping("/Login")
-	public ModelAndView login(@ModelAttribute("user") User user)
+	public ModelAndView login(@ModelAttribute User user)
 	{
-		return new ModelAndView("Login");
+		return new ModelAndView("user/Login");
 	}
 	
 	@RequestMapping(value="/LoginAttempt", method = RequestMethod.POST)
-	public ModelAndView loginAttempt(@ModelAttribute("user") User user, ModelMap model)
+	public ModelAndView loginAttempt(@ModelAttribute User user, ModelMap model)
 	{
-		ModelAndView modelview = null;
+		ModelAndView modelView = null;
 		
 		user = userdao.getValidUser(user);
 		if(user != null)
 		{
 			if(user.getRole().equals("ROLE_USER"))
 			{
-				modelview = new ModelAndView("UserHome");
-				modelview.addObject("email", user.getEmail());
+				modelView = new ModelAndView("user/UserHome");
+				session.setAttribute("isLoggedIn", true);
+				session.setAttribute("email", user.getEmail());
 			}
-			else if(user.getRole().equals("ROLE_ADMIN"))
+			else 
+				if(user.getRole().equals("ROLE_ADMIN"))
 			{
-				modelview = new ModelAndView("AdminHome");
+				modelView = new ModelAndView("admin/AdminHome");
+				session.setAttribute("isAdmin", true);
+				session.setAttribute("email", user.getEmail());
 			}
 		}
 		else
 		{
-			modelview = new ModelAndView("InvalidCredentials");
+			session.setAttribute("isLoggedIn", false);
+			session.setAttribute("isAdmin", false);
+			
+			modelView = new ModelAndView("user/Login");
+					modelView.addObject("invalidCredentials", true);
 		}
 
 
-		return modelview;
+		return modelView;
+	}
+	
+	@RequestMapping("/UserHome")
+	public String userHome()
+	{
+		if(session.getAttribute("isLoggedIn") != null)
+			return "user/UserHome";
+		
+		return "redirect:/Login";
+	}
+	
+	@RequestMapping(value="/LogOut")
+	public String logout(HttpServletRequest request)
+	{
+		session.invalidate();
+		session = request.getSession();
+		return "redirect:/Home";
 	}
 }
 
