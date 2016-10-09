@@ -33,11 +33,11 @@ public class Product {
 	private int quantity;
 	
 	@ManyToOne
-	@JoinColumn(name = "category_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 	
 	@ManyToOne
-	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "supplier_id", nullable = false)
 	private Supplier supplier;
 	
 	@Transient
