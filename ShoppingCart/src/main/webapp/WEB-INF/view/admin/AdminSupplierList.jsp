@@ -1,4 +1,4 @@
-<%@ include file="../user/Header.jsp"%>
+
 
 
 <!-- MAIN CONTENT SECTION -->
@@ -37,4 +37,3 @@
 		window.location.href = "/ShoppingCart/AdminSupplierList?sort=" + this.value;
 	});
 </script>
-<%@ include file="../user/Footer.jsp"%>

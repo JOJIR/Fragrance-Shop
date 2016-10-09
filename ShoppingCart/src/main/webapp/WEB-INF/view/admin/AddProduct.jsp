@@ -1,11 +1,11 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ include file="../user/Header.jsp"%>
+
 <section class="mainContent logIn">
 	<div class="container">
 		<div class="row">
 			<div
 				class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
-				<div class="panel panel-default">
+				<div class="panel panel-inverse">
 					<div class="panel-heading">
 						<h3>Product details</h3>
 					</div>
@@ -52,4 +52,3 @@
 		</div>
 	</div>
 </section>
-	<%@ include file="../user/Footer.jsp"%>

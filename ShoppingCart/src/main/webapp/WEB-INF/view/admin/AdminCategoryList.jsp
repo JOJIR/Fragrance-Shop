@@ -1,4 +1,4 @@
-<%@ include file="../user/Header.jsp"%>
+
 
 <!-- MAIN CONTENT SECTION -->
 	<section class="adminHome mainContent clearfix productsContent">
@@ -36,7 +36,7 @@
 			window.location.href = "/ShoppingCart/AdminCategoryList?sort=" + this.value;
 		});
 	</script>
-		<%@ include file="../user/Footer.jsp"%>
+	
 
 
 

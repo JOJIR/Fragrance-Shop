@@ -1,5 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-	<%@ include file="../user/Header.jsp"%>
+	
 	
 	<section class="adminHome mainContent logIn">
 		<div class="container">
@@ -54,5 +54,4 @@
 			</div>
 		</div>
 	</section>
-	<%@ include file="../user/Footer.jsp"%>
-
+	

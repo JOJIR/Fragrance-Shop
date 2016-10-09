@@ -44,7 +44,7 @@ public class User{
 	private Address shippingAddress;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "billiing_id", nullable = false)
+	@JoinColumn(name = "billing_id", nullable = false)
 	private Address billingAddress;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

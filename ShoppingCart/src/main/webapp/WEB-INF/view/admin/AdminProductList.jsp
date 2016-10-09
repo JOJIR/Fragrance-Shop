@@ -1,4 +1,4 @@
-<%@ include file="../user/Header.jsp"%>
+
 	
 
 <!-- MAIN CONTENT SECTION -->
@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3 col-sm-4  col-xs-12 sideBar">
-              <div class="panel panel-default">
+              <div class="panel panel-inverse">
                 <div class="panel-heading">Product categories</div>
                 <div class="panel-body">
                   <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
@@ -97,5 +97,5 @@
 					+ this.value;
 		});
 	</script>
-	<%@ include file="../user/Footer.jsp"%>
+	
 
