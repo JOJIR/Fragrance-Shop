@@ -15,7 +15,7 @@ import com.powerperfume.dao.UserDAO;
 import com.powerperfume.model.User;
 
 @Controller
-public class Registercontroller {
+public class RegisterController {
 	
 	@Autowired
 	UserDAO userDAO;
@@ -24,17 +24,17 @@ public class Registercontroller {
 	HttpSession session;
 	
 	
-	
-	
-	@RequestMapping ("/Register")
+	@RequestMapping("/Register")
 	public String register(@ModelAttribute User user, ModelMap model)
 	{
-	
+		
 		return "user/Register";
 	}
+
+	
 	
 	@RequestMapping(value="/RegisterAttempt", method=RequestMethod.POST)
-	public ModelAndView registerAttempt(@ModelAttribute User user, ModelMap Model )
+	public ModelAndView registerAttempt(@ModelAttribute("user") User user, ModelMap model )
 	{
 		ModelAndView modelview = null;
 		if(userDAO.validateRegistration(user))
