@@ -1,5 +1,6 @@
 package com.powerperfume.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,9 +49,44 @@ public class CartController {
 			order.setQuantity(1);
 			order.setStatus("PENDING");
 			user.getOrders().add(order);
+			userDAO.update(user);
+			
 			return "redirect:/Cart";
 		}
 		return "redirect:/Login";
+	}
+	
+	@RequestMapping("/UpdateCart")
+	public String updateCart(@RequestParam("id") int id, @RequestParam("quantity") int quantity, ModelMap model)
+	{
+		String email = (String) session.getAttribute("email");
+		if(email != null)
+		{
+			Order o = orderDAO.get(id);
+			o.setQuantity(quantity);
+			orderDAO.update(o);
+			
+			return "redirect:/Cart";
+			}
+		return "redirect:/Login";
+	}
+	
+	
+	@RequestMapping("/RemoveFromCart")
+	public String removeFromCart(@RequestParam("id") int id, ModelMap model)
+	{
+		String email = (String) session.getAttribute("email");
+				if(email != null)
+				{
+					User user = userDAO.get(email);
+					Order o = orderDAO.get(id);
+					user.getOrders().remove(0);
+					userDAO.update(user);
+					
+					return "redirect:/Cart";
+				}
+				return "redirect:/Login";
+				
 	}
 	
 	@RequestMapping("/Cart")
@@ -59,11 +95,17 @@ public class CartController {
 		String email = (String) session.getAttribute("email");
 		if(email != null)
 		{
+			BigDecimal total = new BigDecimal(0);
 			List<Order> orderList = userDAO.get(email).getOrders();
 			List<Product> productList = new ArrayList<Product>();
-			for(Order o : orderList) productList.add(o.getProduct());
+			for(Order o : orderList) 
+				{
+				productList.add(o.getProduct());
+				total = total.add(o.getProduct().getPrice().multiply(new BigDecimal(o.getQuantity())));
+				}
 			model.addAttribute("orderList", orderList);
 			model.addAttribute("productList", productList);
+			model.addAttribute("total", total);
 			
 			return "user/Cart";
 		}

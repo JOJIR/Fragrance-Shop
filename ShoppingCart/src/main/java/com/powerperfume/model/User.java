@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -50,7 +51,7 @@ public class User{
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<CardDetails> cardDetails = new ArrayList<CardDetails>();
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.ALL,fetch=FetchType.EAGER)
 	private List<Order> orders = new ArrayList<Order>();
 
 	public String getEmail() {

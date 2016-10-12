@@ -60,7 +60,7 @@
 						<c:choose>
 						<c:when test="${empty isLoggedIn}">
 							<li><span><a href="Login"><font color="white">Log In</font></a><small><font color="skyblue"> or </font></small><a
-									href="Register"><font color="white">Create an account</font></a></span></li>
+									href="Register"><font color="white">Create an Account</font></a></span></li>
 									</c:when>
 									<c:otherwise>
 									<li><a href="AccountHome"><font color="skyblue">Welcome ${email}</font> |</a> <a href="LogOut"><font color="skyblue">Log Out</font></a></li>

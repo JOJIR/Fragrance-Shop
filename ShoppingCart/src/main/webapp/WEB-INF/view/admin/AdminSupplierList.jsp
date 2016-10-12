@@ -9,10 +9,10 @@
 				<table class="table supplierTable">
 					<thead>
 						<tr>
-							<th>Edit</th>
-							<th>Delete</th>
-							<th>Name</th>
-							<th>Address</th>
+							<th><font color="violet">Edit</font></th>
+							<th><font color="violet">Delete</font></th>
+							<th><font color="violet">Name</font></th>
+							<th><font color="violet">Address</font></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -20,8 +20,8 @@
 							<tr>
 								<td class="col-xs-1"><a href="EditSupplier?id=${supplier.id}"><i class="fa fa-pencil"></i></a></td>
 								<td class="col-xs-1"><a href="DeleteSupplierAttempt?id=${supplier.id}"><i class="fa fa-times"></i></a></td>
-								<td>${supplier.name}</td>
-								<td>${supplier.address}</td>
+								<td><font color="darkgrey">${supplier.name}</font></td>
+								<td><font color="darkgrey">${supplier.address}</font></td>
 							</tr>
 						</c:forEach>
 					</tbody>

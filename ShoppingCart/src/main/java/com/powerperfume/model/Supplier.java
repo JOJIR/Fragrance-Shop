@@ -21,6 +21,16 @@ public class Supplier {
 	@GeneratedValue
 	private int id;
 	
+	
+	@NotBlank(message = "Supplier Name cannot be blank")
+	private String name;
+	
+	@NotBlank(message = "Supplier Address cannot be blank")
+	private String address;
+	
+	@OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+	private List<Product> products = new ArrayList<Product>();
+	
 	public int getId() {
 		return id;
 	}
@@ -53,12 +63,5 @@ public class Supplier {
 		this.products = products;
 	}
 
-	@NotBlank(message = "Supplier Name cannot be blank")
-	private String name;
-	
-	@NotBlank(message = "Supplier Address cannot be blank")
-	private String address;
-	
-	@OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
-	private List<Product> products = new ArrayList<Product>();
+
 }

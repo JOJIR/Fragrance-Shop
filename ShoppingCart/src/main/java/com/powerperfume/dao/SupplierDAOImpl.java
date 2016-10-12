@@ -98,7 +98,6 @@ public class SupplierDAOImpl implements SupplierDAO {
 	
 	@Transactional
 	public boolean delete(int id) {
-		Supplier supplier = new Supplier();
 		supplier.setId(id);
 		
 		try

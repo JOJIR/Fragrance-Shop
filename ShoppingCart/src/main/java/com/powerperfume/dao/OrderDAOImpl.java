@@ -78,11 +78,10 @@ public class OrderDAOImpl implements OrderDAO {
 	@Transactional
 	public boolean delete(int id) {
 		
-		order.setId(id);
 		
 		try
 		{
-			sessionFactory.getCurrentSession().delete(order);
+			sessionFactory.getCurrentSession().delete(get(id));
 			
 		}
 		catch(Exception e)
