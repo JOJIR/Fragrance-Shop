@@ -1,9 +1,4 @@
-
-	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-	<%@ include file="Header.jsp"%>
-	
-
-	<section class="mainContent">
+<section class="mainContent">
 		<div class="container">
 			<div class="row">
 				<div class="col-x2-12">
@@ -17,5 +12,5 @@
 	</section>
 	
 
-	<%@ include file="Footer.jsp"%>
+
 

@@ -1,4 +1,4 @@
-<%@ include file="../user/Header.jsp"%>
+
 
 <!-- MAIN CONTENT SECTION -->
 	<section class="adminHome mainContent clearfix productsContent">
@@ -8,10 +8,10 @@
 					<table class="table supplierTable">
 						<thead>
 							<tr>
-								<th>Edit</th>
-								<th>Delete</th>
-								<th>Name</th>
-								<th>Description</th>
+								<th><font color="violet">Edit</font></th>
+								<th><font color="violet">Delete</font></th>
+								<th><font color="violet">Name</font></th>
+								<th><font color="violet">Description</font></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -19,8 +19,8 @@
 								<tr>
 									<td class="col-xs-1"><a href="EditCategory?id=${category.id}"><i class="fa fa-pencil"></i></a></td>
 									<td class="col-xs-1"><a href="DeleteCategoryAttempt?id=${category.id}"><i class="fa fa-times"></i></a></td>							
-									<td>${category.name}</td>
-									<td>${category.description}</td>
+									<td><font color="darkgrey">${category.name}</font></td>
+									<td><font color="darkgrey">${category.description}</font></td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -36,7 +36,7 @@
 			window.location.href = "/ShoppingCart/AdminCategoryList?sort=" + this.value;
 		});
 	</script>
-		<%@ include file="../user/Footer.jsp"%>
+	
 
 
 

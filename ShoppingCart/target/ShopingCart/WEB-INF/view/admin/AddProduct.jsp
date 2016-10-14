@@ -1,5 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ include file="../user/Header.jsp"%>
+
 <section class="mainContent logIn">
 	<div class="container">
 		<div class="row">
@@ -21,7 +21,7 @@
 								<form:input path="name" type="text" class="form-control"
 									required="required" />
 							</div>
-							<form:radiobuttons path="categoryID" items="${categoryList}"
+							<form:radiobuttons path="category.id" items="${categoryList}"
 								required="required" />
 							<div class="form-group">
 								<form:label path="description">Description</form:label>
@@ -36,7 +36,7 @@
 							<form:label path="quantity">Quantity *</form:label>
 							<form:input path="quantity" type="text" class="form-control"
 								required="required" />
-							<form:select path="supplierID" items="${supplierList}" />
+							<form:select path="supplier.id" items="${supplierList}" />
 
 							<form:label path="image">Image</form:label>
 							<form:input type="file" path="image" />
@@ -52,4 +52,3 @@
 		</div>
 	</div>
 </section>
-	<%@ include file="../user/Footer.jsp"%>

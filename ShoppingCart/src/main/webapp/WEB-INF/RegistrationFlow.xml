@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                        http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+	<on-start>
+		<evaluate expression="registrationHandler.getInstance()"
+			result="flowScope.user" />
+	</on-start>
+
+	<view-state id="start" view="user/Register" model="flowScope.user">
+		<transition on="submit" to="validate" />
+	</view-state>
+
+	<action-state id="validate">
+		<evaluate expression="registrationHandler.validateDetails(user,messageContext)"></evaluate>
+		<transition on="success" to="confirmDetails" />
+		<transition on="failure" to="start" />
+	</action-state>
+
+	<view-state id="confirmDetails" view="user/RegistrationConfirmation"
+		model="flowScope.user">
+		<transition on="edit" to="start" />
+		<transition on="submit" to="confirm" />
+	</view-state>
+
+	<action-state id="confirm">
+		<evaluate
+			expression="registrationHandler.addUser(flowRequestContext,flowScope.user)"></evaluate>
+		<transition to="returnToHome" />
+	</action-state>
+
+	<end-state id="returnToHome" view="externalRedirect:/Home" />
+</flow>

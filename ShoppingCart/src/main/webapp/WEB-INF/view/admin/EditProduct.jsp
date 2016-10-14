@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div
-					class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+					class="col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
 							<h3>Product Details</h3>
@@ -26,7 +26,7 @@
 									required="required" />
 								<div class="form-group">
 									<form:label path="description">Description</form:label>
-									<form:textarea rows="20" cols="40" path="description" class="form-control" />
+									<form:textarea rows="5" cols="5" path="description" class="form-control" />
 								</div>
 								<div class="form-group">
 									<form:label path="price">Price *</form:label>

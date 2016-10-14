@@ -8,10 +8,10 @@
 					<table class="table supplierTable">
 						<thead>
 							<tr>
-								<th><font color="violet">Edit</font></th>
-								<th><font color="violet">Delete</font></th>
-								<th><font color="violet">Name</font></th>
-								<th><font color="violet">Description</font></th>
+								<th><font color="violet">EDIT</font></th>
+								<th><font color="violet">DELETE</font></th>
+								<th><font color="violet">NAME</font></th>
+								<th><font color="violet">DESCRIPTION</font></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -19,8 +19,8 @@
 								<tr>
 									<td class="col-xs-1"><a href="EditCategory?id=${category.id}"><i class="fa fa-pencil"></i></a></td>
 									<td class="col-xs-1"><a href="DeleteCategoryAttempt?id=${category.id}"><i class="fa fa-times"></i></a></td>							
-									<td><font color="darkgrey">${category.name}</font></td>
-									<td><font color="darkgrey">${category.description}</font></td>
+									<td><font color="darkgrey"><b>${category.name}</b></font></td>
+									<td><font color="darkgrey"><b>${category.description}</b></font></td>
 								</tr>
 							</c:forEach>
 						</tbody>

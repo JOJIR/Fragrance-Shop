@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -41,13 +44,14 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li id="LinkHome"><a href="Home">HOME</a></li>
 				<li id="LinkLogin"><a href="Login">LOGIN</a></li>
-				<li id="LinkRegister"><a href="Register">REGISTER</a></li>
+				<li id="LinkRegister"><a href="Registration.obj">REGISTER</a></li>
 				<li id="LinkAboutUs"><a href="AboutUs">ABOUT US</a></li>
 				<li id="LinkContactUs"><a href="ContactUs">CONTACT US</a></li>
 			</ul>
 
 
 			<!-- social media icons -->
+			
 			<ul class="nav navbar-nav navbar-right social">
 				<li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
@@ -55,44 +59,80 @@
 
 			</ul>
 
-				<div class="col-md-6 col-xs-12">
-						<ul class="list-inline pull-right">
-						<c:choose>
-						<c:when test="${empty isLoggedIn}">
-							<li><span><a href="Login"><font color="white">Log In</font></a><small><font color="skyblue"> or </font></small><a
-									href="Register"><font color="white">Create an Account</font></a></span></li>
-									</c:when>
-									<c:otherwise>
-									<li><a href="AccountHome"><font color="skyblue">Welcome ${email}</font> |</a> <a href="LogOut"><font color="skyblue">Log Out</font></a></li>
-									</c:otherwise>
-									</c:choose>
-							<li class="dropdown searchBox"><a href="#"
-								class="dropdown-toggle" data-toggle="dropdown"><i
-									class="fa fa-search hicon"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><span class="input-group"> <input type="text"
-											class="form-control" placeholder="Search..."
-											aria-describedby="basic-addon2"> <span
-											class="input-group-addon" id="basic-addon2">Search</span>
-									</span></li>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown"><i class="fa fa-shopping-cart hicon"></i>$0</a>
-								</li>
-								</ul>
-						<div class="col-md-6 col-xs-12">
-							<ul class="list-inline pull-right">
-										<li><span class="btn-group" role="group" aria-label="...">
-											<button type="button" class="btn btn-default" onclick="location.href='/ShoppingCart/Cart'">Shopping
-												Cart</button>
-											<button type="button" class="btn btn-default">Checkout</button></span>
-										</li></ul></div>
-										
-									
-								
-								
+			<div class="col-md-6 col-xs-12">
+				<ul class="list-inline pull-right">
+					<c:choose>
+						<c:when test="${empty pageContext.request.userPrincipal}">
+							<li><span><a href="Login"><font color="white">Log
+											In</font></a><small><font color="skyblue"> or </font></small><a
+									href="Registration.obj"><font color="white">Create
+											an Account</font></a></span></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="AccountHome"><font color="skyblue">Welcome
+										${pageContext.request.userPrincipal.name}</font> |</a> <sec:authorize
+									access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">
+									<a href="javascript:formSubmit()"> Logout</a>
+								</sec:authorize></li>
+						</c:otherwise>
+					</c:choose>
+
+					<li class="dropdown searchBox"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"><i
+							class="fa fa-search hicon"></i></a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><span class="input-group"> <input type="text"
+									class="form-control" placeholder="Search..."
+									aria-describedby="basic-addon2"> <span
+									class="input-group-addon" id="basic-addon2">Search</span>
+							</span></li>
+						</ul></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><i class="fa fa-shopping-cart hicon"></i>$${total}</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+
+							<c:forEach items="${orderList}" var="order" varStatus="status">
+								<li><a href="#">
+										<div class="media">
+											<img class="indexproducts"
+												src="resources/image/products/${productList[status.index].id}.jpg"
+												alt="cart-Image">
+											<div class="media-body">
+												<h5 class="media-heading">
+													${productList[status.index].name} <br> <span>${order.quantity}
+														X $${productList[status.index].price}</span>
+												</h5>
+											</div>
+										</div>
+								</a></li>
+							</c:forEach>
+							<li>
+							<li><span class="btn-group" role="group" aria-label="...">
+									<button type="button" class="btn btn-default"
+										onclick="location.href='/ShoppingCart/Cart'">My Cart</button>
+									<button type="button" class="btn btn-default">Checkout</button>
+							</span></li>
+						</ul>
 			</div>
+
+
+			<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">
+				<!-- For login user -->
+				<c:url value="/j_spring_security_logout" var="logoutUrl" />
+				<form action="${logoutUrl}" method="post" id="logoutForm">
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+				</form>
+				<script>
+			function formSubmit() {
+				document.getElementById("logoutForm").submit();
+			}
+		</script>
+			</sec:authorize>
+
+
+
 		</div>
 	</div>
-	<!-- /.navbar-collapse -->
-	<!-- /.container-fluid --> </nav>
+
+	<!-- /.navbar-collapse --> <!-- /.container-fluid --> </nav>

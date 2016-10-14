@@ -1,7 +1,4 @@
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-display: block;
-height: auto;
-line-height: 1;
 width: 100%;
 }
 .indexproducts
@@ -834,17 +831,6 @@ font-family: sans-serif;
 }
 
 
-.singleProduct .media .productSlider #carousel .item img {
-width: 100%;
-}
-.carousel-inner>.item>a>img, .carousel-inner>.item>img {
-line-height: 1;
-}
-.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
-display: block;
-max-width: 100%;
-height: auto;
-}
 img {
 vertical-align: middle;
 }

@@ -1,5 +1,7 @@
 package com.powerperfume.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,14 +18,14 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name= "card_details")
 @Component
-public class CardDetails {
+public class CardDetails implements Serializable {
 	
 	@Id
 	@GeneratedValue
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "email", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "email", nullable = false)
 	private User user;
 	
 	@Column(name = "card_number")

@@ -1,4 +1,4 @@
-<%@ include file="../user/Header.jsp"%>
+
 	
 
 <!-- MAIN CONTENT SECTION -->
@@ -7,13 +7,13 @@
           <div class="row">
             <div class="col-md-3 col-sm-4  col-xs-12 sideBar">
               <div class="panel panel-inverse">
-                <div class="panel-heading">Product categories</div>
+                <div class="panel-heading"><font color="darkblue"><strong>Product Categories</strong></font></div>
                 <div class="panel-body">
                   <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
                     <ul class="nav navbar-nav side-nav">
                       <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#men">Men <i class="fa fa-plus"></i></a>
-                        <ul id="women" class="collapse collapseItem">
+                        <ul id="men" class="collapse collapseItem">
                         <c:forEach items="${maleCategoryList}" var="maleCategory">
                           	<li><a href="/ShoppingCart/AdminProductList?category=${maleCategory.id}"><i class="fa fa-caret-right" aria-hidden="true"></i>${maleCategory.name}</a></li>
 						</c:forEach>
@@ -62,8 +62,8 @@
 										<p><font color="lightblue">${product.description}</font></p>
 										<h3><font color="darkgrey">$${product.price}</font></h3>
 										<ul class="list-inline">
-											<li><h4><font color="darkgrey">Category ID:${product.categoryID}</font></h4></li>
-											<li><h4><font color="darkgrey">Supplier ID:${product.supplierID}</font></h4></li>
+											<li><h4><font color="darkgrey">Category:${product.category.name}</font></h4></li>
+											<li><h4><font color="darkgrey">Supplier:${product.supplier.name}</font></h4></li>
 										</ul>
 										<div class="btn-group" role="group">
 										<button type="button" class="btn btn-default"
@@ -97,5 +97,5 @@
 					+ this.value;
 		});
 	</script>
-	<%@ include file="../user/Footer.jsp"%>
+	
 

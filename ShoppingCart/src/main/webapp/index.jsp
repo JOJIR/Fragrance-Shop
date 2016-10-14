@@ -1,19 +1,21 @@
 <%@include file="WEB-INF/view/user/Header.jsp"%>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+	<!--slider-->
+
+	<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-		<li data-target="#myCarousel" data-slide-to="3"></li>
-		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+		<li data-target="#slider-carousel" data-slide-to="1"></li>
+		<li data-target="#slider-carousel" data-slide-to="2"></li>
+		<li data-target="#slider-carousel" data-slide-to="3"></li>
+		<li data-target="#slider-carousel" data-slide-to="4"></li>
 	</ol>
 
 
 	<!-- Wrapper for slides -->
-	<div class="carousel-inner" role="listbox"
-		style="width: 100%; height: 500px !important;">
+	<div class="carousel-inner">
 		<div class="item active">
 			<img class="first-slide"
 				src="resources/image/home/carousel/perfume1.jpg" alt="First slide">
@@ -48,15 +50,18 @@
 
 
 		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#myCarousel" role="button"
+		<a class="left carousel-control" href="#slider-carousel" role="button"
 			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
 			aria-hidden="true"></span> <span class="sr-only">Previous</span>
-		</a> <a class="right carousel-control" href="#myCarousel" role="button"
-			data-slide="next"> <span
+		</a> <a class="right carousel-control" href="#slider-carousel"
+			role="button" data-slide="next"> <span
 			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+</div>
+</div>
+	
 
 	<br>  
 
@@ -74,25 +79,29 @@
 									<div class="col-sm-4 col-xs-12">
 										<div class="image" onclick="location.href='SingleProduct';">
 											<div class="imageWrapper">
-												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-01.jpg"
-													alt="featureproducts-image">
-												<div class="masking">
-													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
-												</div>
-											</div>
-
-										</div>
-									</div>
-									<div class="col-sm-4 col-xs-12">
-										<div class="image" onclick="location.href='SingleProduct';">
-											<div class="imageWrapper">
 												<img class="indexproducts" src="resources/image/home/featuredproducts/FG-02.jpg"
 													alt="featureproducts-image">
 												<div class="masking">
 													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
 												</div>
 											</div>
-
+											<div class="caption">
+						<h4><font color="violet">FRAGRANCE WOMEN</font></h4>
+					</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-12">
+										<div class="image" onclick="location.href='SingleProduct';">
+											<div class="imageWrapper">
+												<img class="indexproducts" src="resources/image/home/featuredproducts/DO-02.jpg"
+													alt="featureproducts-image">
+												<div class="masking">
+													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
+												</div>
+											</div>
+											<div class="caption">
+						<h4><font color="violet">DEODORANT MEN</font></h4>
+					</div>
 										</div>
 									</div>
 									<div class="col-sm-4 col-xs-12">
@@ -104,7 +113,9 @@
 													<a href="ProductGrid" class="btn viewBtn"><font color="lightblue">View Products</font></a>
 												</div>
 											</div>
-
+											<div class="caption">
+						<h4><font color="violet">PERFUME MEN</font></h4>
+					</div>
 										</div>
 									</div>
 								</div>

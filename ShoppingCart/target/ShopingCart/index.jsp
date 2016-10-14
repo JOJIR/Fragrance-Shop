@@ -70,7 +70,7 @@
 						<section class="mainContent">
 							<div class="container">
 								<div class="row featuredCollection">
-									<div class="col-xs-12"></div>
+									
 									<div class="col-sm-4 col-xs-12">
 										<div class="image" onclick="location.href='SingleProduct';">
 											<div class="imageWrapper">

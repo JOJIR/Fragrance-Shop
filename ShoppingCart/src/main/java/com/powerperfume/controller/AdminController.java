@@ -11,6 +11,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +32,8 @@ import com.powerperfume.model.Supplier;
 @Controller
 public class AdminController
 {
+	Logger log = LoggerFactory.getLogger(CartController.class);
+	
 	@Autowired
 	HttpSession session;
 	
@@ -48,27 +52,62 @@ public class AdminController
 	@RequestMapping("/AdminHome")
 	public String adminHome()
 	{
+		log.debug("MethodStart: adminHome");
 		if (session.getAttribute("isAdmin") != null)
-		return "admin/AdminHome";
+		{
 		
-		return "redirect:/AccountHome";
+			return "admin/AdminHome";
+		
+		
+		}
+	log.debug("MethodEnd: adminHome");
+	
+	return "redirect:/AccountHome";
+	
 	}
+	
+	
+	@RequestMapping("/Error")
+	public String accessDenied()
+	{
+		log.debug("MethodStart: accessDenied");
+		log.debug("MethodEnd: accessDenied");
+
+		
+		return "Error";
+	}
+
 
 	@RequestMapping("/AccountHome")
 	public String accountHome()
 	{
+		log.debug("MethodStart: accountHome");
 		if(session.getAttribute("isAdmin") !=null)
+		{
+			log.debug("MethodEnd: accountHome");
+			
 			return "redirect:/AdminHome";
+		}
+			
 		else if(session.getAttribute("isLoggedin") !=null)
+			
+		{
+			log.debug("MethodEnd: accountHome");
 			
 			return "redirect:/UserHome";
 			
-			return "redirect:/Login";
+			
+	}
+		log.debug("MethodEnd: accountHome");
+		
+		return "redirect:/Login";
+		
 	}
 	
 	@RequestMapping("/AddProduct")
 	public ModelAndView addProduct()
 	{
+		log.debug("MethodStart: addProduct");
 		ModelAndView modelView = new ModelAndView("admin/AdminHome");
 		List<Category> clist = categoryDAO.list(0);
 		List<Supplier> slist = supplierDAO.list(0);
@@ -90,6 +129,8 @@ public class AdminController
 		modelView.addObject("isAdminAddProductClicked", true);
 
 
+		log.debug("MethodEnd: addProduct");
+		
 		return modelView;
 	}
 
@@ -97,12 +138,13 @@ public class AdminController
 	@RequestMapping("/AddProductAttempt")
 	public String addProductAttempt(@ModelAttribute("product") Product product, HttpServletRequest request, Model model)
 	{
+		log.debug("MethodStart: addProductAttempt");
 		ServletContext context = request.getServletContext();
 		String path = context.getRealPath("./resources/image/products/" + product.getId() + ".jpg");
 
 
-		System.out.println("Path = " + path);
-		System.out.println("File name = " + product.getImage().getOriginalFilename());
+		log.info("Path = " + path);
+		log.info("File name = " + product.getImage().getOriginalFilename());
 
 
 		if (!product.getImage().isEmpty())
@@ -115,16 +157,16 @@ public class AdminController
 				BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(f));
 				bs.write(bytes);
 				bs.close();
-				System.out.println("Image uploaded");
+				log.info("Image uploaded");
 			} catch (Exception e)
 			{
-				System.out.println("Exception occured while uploading image: " + e);
+				log.error("Exception occured while uploading image: " + e);
 			}
 		}
 
 
 		productDAO.save(product);
-
+		log.debug("MethodEnd: addProductAttempt");
 
 		return "redirect:/AdminProductList";
 	}
@@ -133,6 +175,7 @@ public class AdminController
 	@RequestMapping("/EditProduct")
 	public ModelAndView editProduct(@RequestParam("id") String id)
 	{
+		log.debug("MethodStart: editProduct");
 		ModelAndView modelView = new ModelAndView("admin/AdminHome");
 		List<Category> clist = categoryDAO.list(0);
 		List<Supplier> slist = supplierDAO.list(0);
@@ -152,18 +195,22 @@ public class AdminController
 		modelView.addObject("categoryList", cmap);
 		modelView.addObject("supplierList", smap);
 		modelView.addObject("isAdminEditProductClicked", true);
+		
+		log.debug("MethodEnd: editProduct");
+		
 		return modelView;
 	}
 	
 	@RequestMapping("/EditProductAttempt")
 	public String editProductAttempt(@ModelAttribute("product") Product product, HttpServletRequest request, Model model)
 	{
+		log.debug("MethodStart: editProductAttempt");
 		ServletContext context = request.getServletContext();
 		String path = context.getRealPath("./resources/image/products/" + product.getId() + ".jpg");
 
 
-		System.out.println("Path = " + path);
-		System.out.println("File name = " + product.getImage().getOriginalFilename());
+		log.info("Path = " + path);
+		log.info("File name = " + product.getImage().getOriginalFilename());
 
 
 		if (!product.getImage().isEmpty())
@@ -176,16 +223,16 @@ public class AdminController
 				BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(f));
 				bs.write(bytes);
 				bs.close();
-				System.out.println("Image uploaded");
+				log.info("Image uploaded");
 			} catch (Exception e)
 			{
-				System.out.println("Exception occured while uploading image: " + e);
+				log.error("Exception occured while uploading image: " + e);
 			}
 		}
 
 
 		productDAO.update(product);
-
+		log.debug("MethodEnd: editProductAttempt");
 
 		return "redirect:/AdminProductList";
 	}
@@ -194,7 +241,10 @@ public class AdminController
 	@RequestMapping("/DeleteProductAttempt")
 	public String deleteProductAttempt(@RequestParam("id") String id, Model model)
 	{
+		log.debug("MethodStart: deleteProductAttempt");
 		productDAO.delete(id);
+		log.debug("MethodEnd: deleteProductAttempt");
+		
 		return "redirect:/AdminProductList";
 	}
 
@@ -202,16 +252,18 @@ public class AdminController
 	@RequestMapping("/AddSupplier")
 	public ModelAndView addSupplier()
 	{
+		log.debug("MethodStart: addSupplier");
 		ModelAndView modelView;
 		if(session.getAttribute("isAdmin") != null)
 		{
 			modelView = new ModelAndView("admin/AdminHome");
-			
 			modelView.addObject("isAdminAddSupplierClicked", true);
 			modelView.addObject("supplier", new Supplier());
 		}
 		else
 			modelView = new ModelAndView("../../index");
+		
+		log.debug("MethodEnd: addSupplier");
 		
 		return modelView;
 	}
@@ -220,7 +272,10 @@ public class AdminController
 	@RequestMapping("/AddSupplierAttempt")
 	public String addSupplierAttempt(@ModelAttribute("supplier") Supplier supplier, Model model)
 	{
+		log.debug("MethodStart: addSupplierAttempt");
 		supplierDAO.save(supplier);
+		log.debug("MethodEnd: addSupplierAttempt");
+		
 		return "redirect:/AdminSupplierList";
 	}
 
@@ -228,9 +283,12 @@ public class AdminController
 	@RequestMapping("/EditSupplier")
 	public ModelAndView editSupplier(@RequestParam("id") Integer id)
 	{
+		log.debug("MethodStart: editSupplier");
 		ModelAndView modelView = new ModelAndView("admin/AdminHome");
 		modelView.addObject("supplier", supplierDAO.get(id));
 		modelView.addObject("isAdminEditSupplierClicked", true);
+		
+		log.debug("MethodEnd: editSupplier");
 		
 		return modelView;
 	}
@@ -238,20 +296,27 @@ public class AdminController
 	@RequestMapping("/EditSupplierAttempt")
 	public String editSupplierAttempt(@ModelAttribute("supplier") Supplier supplier, Model model)
 	{
+		log.debug("MethodStart: editSupplierAttempt");
 		supplierDAO.update(supplier);
+		log.debug("MethodEnd: editSupplierAttempt");
+		
 		return "redirect:/AdminSupplierList";
 	}
 	
 	@RequestMapping("DeleteSupplierAttempt")
 	public String deleteSupplierAttempt(@RequestParam("id") Integer id)
 	{
+		log.debug("MethodStart: deleteSupplierAttempt");
 		supplierDAO.delete(id);
+		log.debug("MethodEnd: deleteSupplierAttempt");
+		
 		return "redirect:/AdminSupplierList";
 	}
 	
 	@RequestMapping("/AddCategory")
 	public ModelAndView addCategory()
 	{
+		log.debug("MethodStart: addCategory");
 		ModelAndView modelView;
 		if(session.getAttribute("isAdmin") != null)
 		{
@@ -263,22 +328,30 @@ public class AdminController
 		else
 			modelView = new ModelAndView("../../index");
 		
+		log.debug("MethodEnd: addCategory");
+		
 		return modelView;
 	}
 	
 	@RequestMapping("/AddCategoryAttempt")
 	public String addCategoryAttempt(@ModelAttribute("Category") Category Category, Model model)
 	{
+		log.debug("MethodStart: addCategoryAttempt");
 		categoryDAO.save(Category);
+		log.debug("MethodEnd: addCategoryAttempt");
+		
 		return "redirect:/AdminCategoryList";
 	}
 	
 	@RequestMapping("/EditCategory")
 	public ModelAndView editCategory(@RequestParam("id") String id)
 	{
+		log.debug("MethodStart: editCategory");
 		ModelAndView modelView = new ModelAndView("admin/AdminHome");
 		modelView.addObject("category", categoryDAO.get(id));
-		modelView.addObject("isAdminEditcategoryClicked", true);
+		modelView.addObject("isAdminEditCategoryClicked", true);
+		log.debug("MethodEnd: editCategory");
+		
 		
 		return modelView;
 	}
@@ -286,14 +359,20 @@ public class AdminController
 	@RequestMapping("EditCategoryAttempt")
 	public String editCategoryAttempt(@ModelAttribute("category") Category category, Model model)
 	{
+		log.debug("MethodStart: editCategoryAttempt");
 		categoryDAO.update(category);
+		log.debug("MethodEnd: editCategoryAttempt");
+		
 		return "redirect:/AdminCategoryList";
 	}
 	
 	@RequestMapping("/DeleteCategoryAttempt")
 	public String deleteCategoryAttempt(@RequestParam("id") String id)
 	{
+		log.debug("MethodStart: deleteCategoryAttempt");
 		categoryDAO.delete(id);
+		log.debug("MethodEnd: deleteCategoryAttempt");
+		
 		return "redirect:/AdminCategoryList";
 	}
 	
@@ -301,6 +380,7 @@ public class AdminController
 	@RequestMapping("/AdminProductList")
 	public ModelAndView adminProductList(@RequestParam(value = "category", required = false) String category, @RequestParam(value = "sort", required = false) Integer sort, ModelMap model)
 	{
+		log.debug("MethodStart: adminProductList");
 		ModelAndView modelView = new ModelAndView("admin/AdminHome");
 		int s = sort != null ? sort : 0;
 		List<Product> productList;
@@ -318,6 +398,8 @@ public class AdminController
 			modelView.addObject("sortOrder", s);
 			modelView.addObject("isAdminViewProductsClicked", true);
 			
+			log.debug("MethodEnd: adminProductList");
+			
 			return modelView;
 		}
 			
@@ -327,18 +409,21 @@ public class AdminController
 	@RequestMapping("/AdminSupplierList")
 	public ModelAndView adminSupplierList(@RequestParam(value = "sort", required = false) Integer sort, ModelMap model)
 	{
+		log.debug("MethodStart: adminSupplierList");
 		ModelAndView modelView;
 		int s = sort != null ? sort : 0;
 		
 		if(session.getAttribute("isAdmin") != null)
 		{
 			modelView = new ModelAndView("admin/AdminHome");
-			modelView.addObject("isAdminViewSupplierClicked", true);
+			modelView.addObject("isAdminViewSuppliersClicked", true);
 			modelView.addObject("supplierList", supplierDAO.list(s));
 			modelView.addObject("sortOrder", s);
 		}
 		else
 			modelView =new ModelAndView("../../index");
+		
+		log.debug("MethodEnd: adminSupplierList");
 		
 		return modelView;
 	}
@@ -346,6 +431,7 @@ public class AdminController
 	@RequestMapping("/AdminCategoryList")
 	public ModelAndView adminCategoryList(@RequestParam(value = "sort", required = false) Integer sort, ModelMap model)
 	{
+		log.debug("MethodStart: adminCategoryList");
 		ModelAndView modelView;
 		int s = sort != null ? sort : 0;
 		
@@ -358,6 +444,8 @@ public class AdminController
 		}
 		else
 			modelView = new ModelAndView("../../index");
+		
+		log.debug("MethodEnd: adminCategoryList");
 		
 		return modelView;
 	}

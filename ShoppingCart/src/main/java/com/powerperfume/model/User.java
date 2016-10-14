@@ -1,22 +1,24 @@
 package com.powerperfume.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 @Entity
 @Component
-public class User{
+public class User implements Serializable{
 	
 	@Id
 	@NotBlank(message = "Email cannot be blank")
@@ -27,6 +29,7 @@ public class User{
 	
 	@NotBlank(message = "Role cannot be blank")
 	private String role;
+	private boolean enabled = true;
 	
 	@Column(name = "first_name")
 	@NotBlank(message = "First Name cannot be blank")
@@ -42,16 +45,18 @@ public class User{
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "shipping_id", nullable = false)
-	private Address shippingAddress;
+	private Address shippingAddress = new Address();
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "billing_id", nullable = false)
-	private Address billingAddress;
+	private Address billingAddress = new Address();
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<CardDetails> cardDetails = new ArrayList<CardDetails>();
 	
-	@OneToMany(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Order> orders = new ArrayList<Order>();
 
 	public String getEmail() {
@@ -133,5 +138,18 @@ public class User{
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
+	
+	public boolean isEnabled()
+	{
+		return enabled;
+	}
+
+
+	public void setEnabled(boolean enabled)
+	{
+		this.enabled = enabled;
+	}
+
+	
 	
 }

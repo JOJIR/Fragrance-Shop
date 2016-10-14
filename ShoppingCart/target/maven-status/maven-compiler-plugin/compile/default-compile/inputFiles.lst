@@ -8,11 +8,12 @@ F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\c
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\model\Category.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\model\CardDetails.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\AdminController.java
-F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\AboutUscontroller.java
+F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\AboutUsController.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\AddressDAO.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\CategoryDAOImpl.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\CardDetailsDAOImpl.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\SupplierDAOImpl.java
+F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\handler\RegistrationHandler.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\ProductDAOImpl.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\CartController.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\model\Supplier.java
@@ -25,7 +26,7 @@ F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\d
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\OrderDAO.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\model\User.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\SupplierDAO.java
-F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\ContactUscontroller.java
-F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\Registercontroller.java
+F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\ContactUsController.java
+F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\controller\RegisterController.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\dao\CardDetailsDAO.java
 F:\MY DREAM PROJECT\Fragrance-Shop\ShoppingCart\src\main\java\com\powerperfume\model\Address.java

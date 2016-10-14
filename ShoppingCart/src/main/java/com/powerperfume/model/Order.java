@@ -1,6 +1,8 @@
 package com.powerperfume.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="order_details")
 @Component
-public class Order {
+public class Order implements Serializable {
 	
 	@Id
 	@GeneratedValue

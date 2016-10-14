@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div
-					class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+					class="col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
 							<h3>Supplier Details</h3>
