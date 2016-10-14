@@ -69,10 +69,10 @@
 											an Account</font></a></span></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="AccountHome"><font color="skyblue">Welcome
-										${pageContext.request.userPrincipal.name}</font> |</a> <sec:authorize
+							<li><a href="AccountHome"><font color="skyblue">Welcome</font>
+										<font color="blue">${pageContext.request.userPrincipal.name}</font> <font color="darkgrey">|</font></a> <sec:authorize
 									access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">
-									<a href="javascript:formSubmit()"> Logout</a>
+									<a href="javascript:formSubmit()"> <font color="skyblue">Logout</font></a>
 								</sec:authorize></li>
 						</c:otherwise>
 					</c:choose>

@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="page-title">
-						<h3><font color='skyblue'>User Home</font> <small>welcome ${email}</small></h3>
+						<h3><font color='skyblue'>User Home</font> <small><font color="darkgrey">welcome ${email}</font></small></h3>
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -23,7 +23,7 @@
 	<section class="mainContent clearfix stepsWrapper">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
 					<div class="innerWrapper clearfix stepsPage">
 	
 
@@ -33,8 +33,8 @@
 									<h4>User Profile</h4>
 								</div>
 							</div>
-							<div class="col-sm-6 col-xs-12">
-								<div class="panel panel-default">
+							<div class=""form-group"">
+								<div class="panel panel-inverse">
 									<div class="panel-heading">
 										<h4 class="panel-title">Billing Address</h4>
 									</div>
@@ -47,8 +47,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-6 col-xs-12">
-								<div class="panel panel-default">
+							<div class=""form-group"">
+								<div class="panel panel-inverse">
 									<div class="panel-heading">
 										<h4 class="panel-title">Shipping Address</h4>
 									</div>
@@ -61,8 +61,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-6 col-xs-12">
-								<div class="panel panel-default">
+							<div class=""form-group"">
+								<div class="panel panel-inverse">
 									<div class="panel-heading">
 										<h4 class="panel-title">Credit Card</h4>
 									</div>
@@ -77,19 +77,19 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12">
-								<div class="panel panel-default">
+							<div class=""form-group"">
+								<div class="panel panel-inverse">
 									<div class="panel-heading">
 										<h4 class="panel-title">Contact Info</h4>
 									</div>
 									<div class="panel-body">
 										<div class="row">
-											<div class="col-sm-4 col-xs-12">
+											<div class=""form-group"">
 												<address>
 													<a href="#">Email:${email}</a> <br /> <span>Phone:${user.contactNo}</span>
 												</address>
 											</div>
-											<div class="col-sm-8 col-xs-12">
+											<div class=""form-group"">
 												<address>
 													<span>First Name:${user.firstName}</span> <br /> <span>Last
 														Name:${user.lastName}</span> <br />
@@ -101,16 +101,16 @@
 							</div>
 							<div class="col-xs-12">
 								<div class="cartListInner">
-								<h4>Order Details</h4>
+								<h4><font color="darkgrey">Order Details</font></h4>
 									<div class="table-responsive">
 										<table class="table">
 											<thead>
 												<tr>
 													<th></th>
-													<th>Product Name</th>
-													<th>Price</th>
-													<th>Quantity</th>
-													<th>Total</th>
+													<th><font color="violet">Product Name</font></th>
+													<th><font color="violet">Price</font></th>
+													<th><font color="violet">Quantity</font></th>
+													<th><font color="violet">Total</font></th>
 												</tr>
 											</thead>
 											<tbody>

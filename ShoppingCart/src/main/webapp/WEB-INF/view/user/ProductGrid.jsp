@@ -79,7 +79,7 @@
 									</div>
 											<div class="productCaption clearfix">
 										<a href="single-product.html">
-											<h4>${product.name}</h4>
+											<h4><font color="violet">${product.name}</font></h4>
 										</a>
 										<h3><font color="darkgrey">$${product.price}</font></h3>
 									</div>
