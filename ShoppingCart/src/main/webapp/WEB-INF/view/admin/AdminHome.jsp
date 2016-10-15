@@ -22,7 +22,7 @@
 	<section class="mainContent crud form-body">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-2 col-md-offset-1 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
 							<h3>Product </h3>
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-							<div class="col-md-4 col-xs-12">
+							<div class="col-md-2 col-md-offset-1 col-xs-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3>Category </h3>
@@ -55,7 +55,7 @@
 			</div>
 				
 				
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-2 col-md-offset-1 col-xs-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
 							<h3>Supplier </h3>
