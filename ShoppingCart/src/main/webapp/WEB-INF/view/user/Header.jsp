@@ -43,8 +43,9 @@
 			id="navbar-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li id="LinkHome"><a href="Home">HOME</a></li>
-				<li id="LinkLogin"><a href="Login">LOGIN</a></li>
+				<li id="LinkProduct"><a href="ProductGrid">PRODUCTS</a></li>
 				<li id="LinkRegister"><a href="Registration.obj">REGISTER</a></li>
+				<li id="LinkLogin"><a href="Login">LOGIN</a></li>
 				<li id="LinkAboutUs"><a href="AboutUs">ABOUT US</a></li>
 				<li id="LinkContactUs"><a href="ContactUs">CONTACT US</a></li>
 			</ul>

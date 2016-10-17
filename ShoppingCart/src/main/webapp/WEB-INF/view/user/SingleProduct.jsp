@@ -21,4 +21,23 @@
 	          </div>
 	        </div>
 	      </section>
+	      <!-- MAIN CONTENT SECTION -->
+	      <section class="mainContent clearfix">
+	        <div class="container">
+	          <div class="row singleProduct">
+	            <div class="col-xs-12">
+	              <div class="media">
+	                <div class="media-left productSlider">
+	                  <img src="resources/image/products/${product.id}.jpg">
+	                  <h2>${product.name}</h2>
+	                  <h3>$${product.price}</h3>
+	                  <p>${product.description}</p>
+	                  </div>
+	                  </div>
+	                  </div>
+	                  </div>
+	                  </div>
+	                  </section>
+	                  
+	           
 	<%@ include file="Footer.jsp"%>

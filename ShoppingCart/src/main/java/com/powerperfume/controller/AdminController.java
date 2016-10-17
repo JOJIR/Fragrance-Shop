@@ -84,21 +84,21 @@ public class AdminController
 		log.debug("MethodStart: accountHome");
 		if(session.getAttribute("isAdmin") !=null)
 		{
-			log.debug("MethodEnd: accountHome");
+			log.debug("MethodEnd: accountHome-AdminHome");
 			
 			return "redirect:/AdminHome";
 		}
 			
-		else if(session.getAttribute("isLoggedin") !=null)
+		else if(session.getAttribute("isLoggedIn") !=null)
 			
 		{
-			log.debug("MethodEnd: accountHome");
+			log.debug("MethodEnd: accountHome-UserHome");
 			
 			return "redirect:/UserHome";
 			
 			
-	}
-		log.debug("MethodEnd: accountHome");
+		}
+		log.debug("MethodEnd: accountHome-Login");
 		
 		return "redirect:/Login";
 		

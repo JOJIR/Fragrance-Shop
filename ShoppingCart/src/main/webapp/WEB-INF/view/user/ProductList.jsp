@@ -102,7 +102,9 @@
 		</div>
       </section>
 	<script>
-		var e = document.querySelector("#sortOrder");
+	var elem = document.getElementById("LinkProduct");
+	elem.className += " active";	
+	var e = document.querySelector("#sortOrder");
 		e.value = ${sortOrder};
 		e.addEventListener("change", function() {
 			window.location.href = "/ShoppingCart/ProductList?" + ${categoryQuery} "sort=" + this.value;

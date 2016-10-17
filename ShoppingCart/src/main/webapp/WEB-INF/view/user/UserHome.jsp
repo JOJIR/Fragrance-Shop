@@ -101,7 +101,7 @@
 							</div>
 							<div class="col-xs-12">
 								<div class="cartListInner">
-								<h4><font color="darkgrey">Order Details</font></h4>
+								<h4><font color="darkgrey">Order History</font></h4>
 									<div class="table-responsive">
 										<table class="table">
 											<thead>

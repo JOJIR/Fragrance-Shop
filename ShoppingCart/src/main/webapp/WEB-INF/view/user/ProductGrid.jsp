@@ -91,6 +91,8 @@
 			</div>
 		</section>
 		<script>
+		var elem = document.getElementById("LinkProduct");
+		elem.className += " active";
 		var e = document.querySelector("#sortOrder");
 		e.value = ${sortOrder};
 		e.addEventListener("change", function() {

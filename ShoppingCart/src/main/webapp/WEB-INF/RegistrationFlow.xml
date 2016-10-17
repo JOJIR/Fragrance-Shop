@@ -27,8 +27,8 @@
 	<action-state id="confirm">
 		<evaluate
 			expression="registrationHandler.addUser(flowRequestContext,flowScope.user)"></evaluate>
-		<transition to="returnToHome" />
+		<transition to="gotoLogin" />
 	</action-state>
 
-	<end-state id="returnToHome" view="externalRedirect:/Home" />
+	<end-state id="gotoLogin" view="externalRedirect:/Login" />
 </flow>
