@@ -22,7 +22,7 @@ public class HomeController
 		log.debug("MethodStart: home");
 		log.debug("MethodEnd: home");
 		
-		return "../../index";
+		return "user/index";
 	}
 	
 	

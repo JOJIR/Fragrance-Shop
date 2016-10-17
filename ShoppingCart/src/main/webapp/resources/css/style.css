@@ -5,102 +5,7 @@ width: 100%;
 {
 	max-width:175px;
 }
-.style {
-}
-.fullscreenbanner .tp-dottedoverlay.twoxtwo {
-background-image: none!important;
-z-index: 1;
-}
 
-index.htmlmedia="screen"
-.tp-dottedoverlay {
-background-repeat: repeat;
-width: 100%;
-height: 100%;
-position: absolute;
-top: 0px;
-left: 0px;
-z-index: 4;
-}
-* {
-outline: 0;
-margin: 0;
-padding: 0;
-}
-* {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-user agent stylesheetdiv {
-display: block;
-}
-Pseudo ::before element
-:after, :before {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-Pseudo ::after element
-:after, :before {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-Inherited from li.tp-revslider-slidesli.active-revslide.current-sr-slide-visible
-Style Attribute {
-visibility: inherit;
-}
-index.htmlmedia="screen"
-.tp-simpleresponsive>ul>li {
-list-style: none;
-visibility: hidden;
-}
-index.htmlmedia="screen"
-.tp-simpleresponsive ul, .tp-simpleresponsive ul li, .tp-simpleresponsive ul li:before {
-list-style: none;
-list-style: none!important;
-}
-ul li {
-list-style-type: none;
-}
-user agent stylesheetli {
-text-align: -webkit-match-parent;
-}
-Inherited from ul.tp-revslider-mainul
-index.htmlmedia="screen"
-.tp-simpleresponsive ul, .tp-simpleresponsive ul li, .tp-simpleresponsive ul li:before {
-list-style: none;
-list-style: none!important;
-}
-user agent stylesheetul, menu, dir {
-list-style-type: disc;
-}
-Inherited from div#revslider-210.fullscreenbanner.revslider-initialised.tp-simpleresponsive.hovered
-.fullscreenbanner {
-color: #acacac;
-}
-Inherited from body.padding-top
-body {
-font-family: 'Oxygen',sans-serif;
-font-size: 12px;
-line-height: 18px;
-color: #252525;
-font-weight: 400;
-}
-body {
-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-font-size: 14px;
-line-height: 1.42857143;
-color: #333;
-}
-Inherited from html
-html {
-font-size: 10px;
-}
-html {
-font-family: sans-serif;
-}
 
 .logo
 {
@@ -166,38 +71,6 @@ body{
     }
 }
 
-=====register=====
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-
-
-
-=====contactus=====
-.jumbotron {
-background: #358CCE;
-color: #FFF;
-border-radius: 0px;
-}
-.jumbotron-sm { padding-top: 24px;
-padding-bottom: 24px; }
-.jumbotron small {
-color: #FFF;
-}
-.h1 small {
-font-size: 24px;
-}
-
-
-.style {
-}
 .box .box-heading {
 background: url(../image/heading.png) repeat-x left top #9a9a9a;
 font-family: 'Open sans';
@@ -210,10 +83,7 @@ padding: 17px 10px 17px 30px;
 margin-bottom: 27px;
 border-radius: 5px;
 }
- {
-display: block;
-}
-#container
+ 
 #container {
 text-align: left;
 }
@@ -231,13 +101,7 @@ line-height: 20px;
 color: #333333;
 }
 
-html {
-font-size: 100%;
-}
 
-
-.style {
-}
 .box .box-content .box-product ul li:hover .image2 img {
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 transform: scale(1.1,1.1);
@@ -331,10 +195,7 @@ font-size: 100%;
 
 
 
-@media (min-width: 767px)
-.banner>div:hover .s-desc {
-padding-left: 43%;
-}
+
 .banner .s-desc {
 display: block;
 position: absolute;
@@ -518,8 +379,7 @@ font-size: 100%;
 }
 
 
-element.style {
-}
+
 .banner .s-desc h2 {
 font-size: 30px;
 line-height: 30px;
@@ -608,7 +468,7 @@ font-size: 14px;
 line-height: 20px;
 color: #333333;
 }
-Inherited from html
+l
 html {
 font-size: 100%;
 }
@@ -685,7 +545,7 @@ user agent stylesheeta:-webkit-any-link {
 color: -webkit-link;
 cursor: auto;
 }
-Inherited from div#container
+
 #container {
 text-align: left;
 }
@@ -741,7 +601,7 @@ Pseudo ::before element
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-Pseudo ::after element
+ ::after element
 :after, :before {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -761,7 +621,7 @@ font-size: 14px;
 line-height: 1.42857143;
 color: #333;
 }
-Inherited from html
+
 html {
 font-size: 10px;
 }
@@ -796,13 +656,8 @@ box-sizing: border-box;
 user agent stylesheetdiv {
 display: block;
 }
-Pseudo ::before element
-:after, :before {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-Pseudo ::after element
+
+ ::after element
 :after, :before {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -962,10 +817,7 @@ font-size: 14px;
 line-height: 20px;
 color: #333333;
 }
-Inherited from html
-html {
-font-size: 100%;
-}
+
 
 
 .topBar ul.pull-right li:first-child span a {
@@ -1017,13 +869,13 @@ color: -webkit-link;
 text-decoration: underline;
 cursor: auto;
 }
-Pseudo ::before element
+ ::before element
 :after, :before {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-Pseudo ::after element
+ ::after element
 :after, :before {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -1063,4 +915,104 @@ font-size: 10px;
 }
 html {
 font-family: sans-serif;
+}
+.style {
+}
+.fullscreenbanner .tp-dottedoverlay.twoxtwo {
+background-image: none!important;
+z-index: 1;
+}
+
+index.htmlmedia="screen"
+.tp-dottedoverlay {
+background-repeat: repeat;
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: 4;
+}
+* {
+outline: 0;
+margin: 0;
+padding: 0;
+}
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+user agent stylesheetdiv {
+display: block;
+}
+Pseudo ::before element
+:after, :before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+ ::after element
+:after, :before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+Inherited from li.tp-revslider-slidesli.active-revslide.current-sr-slide-visible
+Style Attribute {
+visibility: inherit;
+}
+index.htmlmedia="screen"
+.tp-simpleresponsive>ul>li {
+list-style: none;
+visibility: hidden;
+}
+index.htmlmedia="screen"
+.tp-simpleresponsive ul, .tp-simpleresponsive ul li, .tp-simpleresponsive ul li:before {
+list-style: none;
+list-style: none!important;
+}
+ul li {
+list-style-type: none;
+}
+user agent stylesheetli {
+text-align: -webkit-match-parent;
+}
+Inherited from ul.tp-revslider-mainul
+index.htmlmedia="screen"
+.tp-simpleresponsive ul, .tp-simpleresponsive ul li, .tp-simpleresponsive ul li:before {
+list-style: none;
+list-style: none!important;
+}
+user agent stylesheetul, menu, dir {
+list-style-type: disc;
+}
+Inherited from div#revslider-210.fullscreenbanner.revslider-initialised.tp-simpleresponsive.hovered
+.fullscreenbanner {
+color: #acacac;
+}
+Inherited from body.padding-top
+body {
+font-family: 'Oxygen',sans-serif;
+font-size: 12px;
+line-height: 18px;
+color: #252525;
+font-weight: 400;
+}
+body {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+}
+
+html {
+font-size: 10px;
+}
+html {
+font-family: sans-serif;
+}
+@media (min-width: 767px)
+.banner>div:hover .s-desc {
+padding-left: 43%;
 }

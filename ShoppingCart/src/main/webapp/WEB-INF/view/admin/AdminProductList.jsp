@@ -77,7 +77,7 @@
 										</div>
 									</div>
 									<div class="col-xs-2">
-										<i class="fa fa-times">${product.quantity}</i>
+										<i class="fa fa-times"><font color="violet">${product.quantity}</font></i>
 									</div>
 								</div>
 							</div>
