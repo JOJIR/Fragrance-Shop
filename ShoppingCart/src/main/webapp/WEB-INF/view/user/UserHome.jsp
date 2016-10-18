@@ -69,7 +69,7 @@
 									<div class="panel-body">
 									<c:forEach items="${user.cardDetails}" var="card">
 										<address>
-											<span>Card Number:${card.cardNumber}</span>
+											<span>Card Number:${card.cardNumber}</span><br />
 											<span>CVV:${card.cvv}</span><br />
 											<span>Name on card:${card.name}</span>
 										</address>
@@ -84,53 +84,22 @@
 									</div>
 									<div class="panel-body">
 										<div class="row">
+										<div class=""form-group"">
+												<address>
+													<span>Name:${user.firstName}</span> <span>${user.lastName}</span> <br />
+												</address>
+											</div>
 											<div class=""form-group"">
 												<address>
 													<a href="#">Email:${email}</a> <br /> <span>Phone:${user.contactNo}</span>
 												</address>
 											</div>
-											<div class=""form-group"">
-												<address>
-													<span>First Name:${user.firstName}</span> <br /> <span>Last
-														Name:${user.lastName}</span> <br />
-												</address>
-											</div>
+											
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12">
-								<div class="cartListInner">
-								<h4><font color="darkgrey">Order History</font></h4>
-									<div class="table-responsive">
-										<table class="table">
-											<thead>
-												<tr>
-													<th></th>
-													<th><font color="violet">Product Name</font></th>
-													<th><font color="violet">Price</font></th>
-													<th><font color="violet">Quantity</font></th>
-													<th><font color="violet">Total</font></th>
-												</tr>
-											</thead>
-											<tbody>
-												<c:forEach items="${orderList2}" var="order"
-													varStatus="status">
-													<tr>
-														<td class="col-xs-2"><span class="cartImage"><img
-																src="resources/image/products/${productList2[status.index].id}.jpg"
-																alt="image"></span></td>
-														<td class="col-xs-4">${productList2[status.index].name}</td>
-														<td class="col-xs-2">${productList2[status.index].price}</td>
-														<td class="col-xs-2">${order.quantity}</td>
-														<td class="col-xs-2">$${productList2[status.index].price
-															* order.quantity}</td>
-													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
-									</div>
-								</div>
+							
 							</div>
 						</form>
 					</div>

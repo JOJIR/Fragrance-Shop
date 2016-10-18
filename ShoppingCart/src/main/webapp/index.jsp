@@ -1,4 +1,4 @@
-<%@ include file="Header.jsp"%>
+<%@ include file="WEB-INF/view/user/Header.jsp"%>
 
 
 	<!--slider-->
@@ -164,4 +164,4 @@
 	var elem = document.getElementById("LinkHome");
 	elem.className += " active";
 </script>
-<%@ include file="Footer.jsp"%>
+<%@ include file="WEB-INF/view/user/Footer.jsp"%>

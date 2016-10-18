@@ -95,7 +95,7 @@
 							<c:forEach items="${orderList}" var="order" varStatus="status">
 								<li><a href="#">
 										<div class="media">
-											<img class="indexproducts"
+											<img class="cart"
 												src="resources/image/products/${productList[status.index].id}.jpg"
 												alt="cart-Image">
 											<div class="media-body">
