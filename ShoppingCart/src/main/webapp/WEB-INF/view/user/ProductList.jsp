@@ -111,8 +111,3 @@
 		});
 	</script>
 	<%@ include file="Footer.jsp"%>
-					
-											
-	
-											
-	

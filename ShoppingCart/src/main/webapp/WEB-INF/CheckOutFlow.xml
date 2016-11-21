@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                        http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+	<on-start>
+		<evaluate expression="checkOutHandler.getInstance(flowRequestContext)"
+			result="flowScope.user" />
+	</on-start>
+
+	<view-state id="CheckOutPage1" view="user/CheckOutPage1"
+		model="flowScope.user">
+		<transition on="step2" to="CheckOutPage2" />
+		<transition on="step3" to="cartData" />
+	</view-state>
+
+	<view-state id="CheckOutPage2" view="user/CheckOutPage2"
+		model="flowScope.user">
+		<transition on="step1" to="CheckOutPage1" />
+		<transition on="step3" to="cartData" />
+	</view-state>
+
+	<action-state id="cartData">
+		<evaluate
+			expression="checkOutHandler.getCart(flowRequestContext)"></evaluate>
+		<transition to="CheckOutPage3" />
+	</action-state>
+	
+	<view-state id="CheckOutPage3" view="user/CheckOutPage3"
+		model="flowScope.user">
+		<transition on="step1" to="CheckOutPage1" />
+		<transition on="step2" to="CheckOutPage2" />
+		<transition on="step4" to="orderConfirm" />
+	</view-state>
+
+	<action-state id="orderConfirm">
+		<evaluate
+			expression="checkOutHandler.orderConfirm(flowRequestContext)"></evaluate>
+		<transition to="CheckOutPage4" />
+	</action-state>
+
+	<end-state id="CheckOutPage4" view="user/CheckOutPage4" />
+</flow>

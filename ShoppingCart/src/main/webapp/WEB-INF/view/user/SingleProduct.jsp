@@ -32,6 +32,9 @@
 	                  <h2>${product.name}</h2>
 	                  <h3>$${product.price}</h3>
 	                  <p>${product.description}</p>
+	                   <div class="btn-area">
+	                    <a href="cart-page.html" class="btn btn-primary btn-block">Add to cart <i class="fa fa-angle-right" aria-hidden="true"></i></a> 
+	                  </div>
 	                  </div>
 	                  </div>
 	                  </div>

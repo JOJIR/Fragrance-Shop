@@ -1,0 +1,25 @@
+<div class="col-sm-4 col-xs-12">
+		<div class="productBox">
+			<div class="productImage clearfix">
+				<img ng-src="resources/image/products/{{product.id}}.jpg"
+					alt="products-img">
+				<div class="productMasking">
+					<ul class="list-inline btn-group" role="group">
+						<li><a data-toggle="modal" href=".login-modal"
+							class="btn btn-default"></a></li>
+						<li><a href="AddToCart?id={{product.id}}"
+							class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+						<li><a class="btn btn-default" data-toggle="modal"
+							data-ng-click="change({id: product.id})" href=".quick-view"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="productCaption clearfix">
+				<a href="single-product.html">
+					<h5>{{product.name}}</h5>
+				</a>
+				<h3>${{product.price}}</h3>
+			</div>
+		</div>
+	</div>
+

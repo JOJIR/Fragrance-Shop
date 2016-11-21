@@ -1,6 +1,3 @@
-
-	
-
 <!-- MAIN CONTENT SECTION -->
       <section class="adminHome mainContent clearfix productsContent">
         <div class="container">
@@ -97,5 +94,3 @@
 					+ this.value;
 		});
 	</script>
-	
-

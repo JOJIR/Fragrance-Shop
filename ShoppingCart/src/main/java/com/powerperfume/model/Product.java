@@ -1,5 +1,6 @@
 package com.powerperfume.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 
@@ -16,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
-public class Product {
+public class Product implements Serializable{
 
 	@Id
 	@NotBlank(message = "Product ID cannot be blank")

@@ -1,0 +1,39 @@
+<div class="col-xs-12">
+		<div class="media">
+			<div class="media-left">
+				<img class="indexproducts"
+					src="resources/image/products/{{product.id}}.jpg" alt="Image">
+				<span class="maskingImage"><a data-toggle="modal"
+					href=".quick-view" class="btn viewBtn">Quick View</a></span>
+			</div>
+			<div class="media-body">
+				<div class="col-xs-10 content-wrap">
+					<h4 class="media-heading">
+						<a href="SingleProduct">{{product.name}}</a>
+					</h4>
+					<p>{{product.description}}</p>
+					<h3>${{product.price}}</h3>
+					<ul class="list-inline">
+						<li><h4>Category:{{product.category_name}}</h4></li>
+						<li><h4>Supplier:{{product.supplier_name}}</h4></li>
+					</ul>
+	
+
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default"
+							onclick="location.href='/ShoppingCart/EditProduct?id={{product.id}}';">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btn btn-default"
+							onclick="location.href='/ShoppingCart/DeleteProductAttempt?id={{product.id}}';">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</button>
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<i class="fa fa-times">{{product.quantity}}</i>
+				</div>
+			</div>
+		</div>
+	</div>
+

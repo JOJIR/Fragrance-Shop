@@ -1,5 +1,6 @@
 package com.powerperfume.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-public class Category
+public class Category implements Serializable
 {
 
 	@Id

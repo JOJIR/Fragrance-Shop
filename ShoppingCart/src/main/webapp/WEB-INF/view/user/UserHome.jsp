@@ -99,7 +99,37 @@
 									</div>
 								</div>
 							</div>
-							
+													<div class="col-xs-12">
+							<div class="cartListInner">
+							<h4><font color="darkgrey">Order History</font></h4>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th><font color="violet">Product Name</font></th>
+												<th><font color="violet">Price</font></th>
+												<th><font color="violet">Quantity</font></th>
+												<th><font color="violet">Total</font></th>
+											</tr>
+										</thead>
+										<tbody>
+											<c:forEach items="${orderList2}" var="order"
+												varStatus="status">
+												<tr>
+													<td class="col-xs-2"><span class="cart"><img class="cart"
+															src="resources/image/products/${productList2[status.index].id}.jpg"
+															alt="image"></span></td>
+													<td class="col-xs-4"><font color="darkgrey">${productList2[status.index].name}</font></td>
+													<td class="col-xs-2"><font color="darkgrey">${productList2[status.index].price}</font></td>
+													<td class="col-xs-2"><font color="darkgrey">${order.quantity}</font></td>
+													<td class="col-xs-2"><font color="darkgrey">$${productList2[status.index].price
+														* order.quantity}</font></td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+							</div>
 							</div>
 						</form>
 					</div>

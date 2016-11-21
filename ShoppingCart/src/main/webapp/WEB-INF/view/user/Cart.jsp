@@ -79,14 +79,8 @@
 							</div>
 						</div>
 						<div class="checkBtnArea">
-							<a href="" class="btn btn-primary btn-block">Checkout</a>
-							<h5>
-								<B><font color="violet">Mode of Payment</font></B>
-							</h5>
+							<a href="CheckOut.obj" class="btn btn-primary btn-block">Checkout</a>
 							
-								<input type="radio" name="payment" value="cash"><font color="darkgrey"> Cash on
-								Delivery</font><br> <input type="radio" name="payment" value="net">
-								<font color="darkgrey">Net Banking</font><br>
 						</div>
 					</form>
 				</div>
@@ -104,4 +98,3 @@
 		});
 </script>
 <%@ include file="Footer.jsp"%>
-

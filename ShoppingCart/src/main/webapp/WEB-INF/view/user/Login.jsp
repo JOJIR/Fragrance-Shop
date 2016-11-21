@@ -20,6 +20,10 @@
 <section class="mainContent logIn">
 	<div class="container">
 		<div class="row">
+						<c:if test="${invalidCredentials == true}">
+				<%@ include file="InvalidCredentials.jsp"%>
+			</c:if>
+			
 			<div
 				class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10">
 				<div class="panel panel-inverse">
@@ -64,9 +68,7 @@
 
 
 </section>
-<c:if test="${invalidCredentials == true}">
-	<%@ include file="InvalidCredentials.jsp"%>
-</c:if>
+
 
 
 <script type="text/javascript">

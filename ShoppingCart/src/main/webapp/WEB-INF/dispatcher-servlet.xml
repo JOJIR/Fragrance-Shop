@@ -16,6 +16,7 @@
 	<webflow:flow-registry id="flowRegistry"
 		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
 		<webflow:flow-location id="Registration" path="/RegistrationFlow.xml" />
+		<webflow:flow-location id="CheckOut" path="/CheckOutFlow.xml" />
 	</webflow:flow-registry>
 	<webflow:flow-executor id="flowExecutor" />
  	
@@ -63,7 +64,8 @@
 		<property name="maxUploadSize" value="100000000" />
     </bean>
 	
-	<mvc:annotation-driven/>
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+		<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven />
 </beans>
+
 
