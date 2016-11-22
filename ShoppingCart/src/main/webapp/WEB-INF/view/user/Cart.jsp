@@ -79,7 +79,7 @@
 							</div>
 						</div>
 						<div class="checkBtnArea">
-							<a href="CheckOut.obj" class="btn btn-primary btn-block">Checkout</a>
+							<a href="CheckOut.obj" class="btn btn-primary btn-block">CheckOut</a>
 							
 						</div>
 					</form>

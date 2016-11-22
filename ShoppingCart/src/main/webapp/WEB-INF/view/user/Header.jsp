@@ -10,7 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PERFUME POWER</title>
-<script type="text/javascript" src="resources/angularjs/angular.js"></script>
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="resources/font-awesome-4.6.3/css/font-awesome.min.css">
